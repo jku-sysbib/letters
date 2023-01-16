@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>LegantoCreateListReminderEmailLetter</name>
+  <description>Leganto create list - reminder email</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>additional_info_1</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Ihre.Abteilung@organisation.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>create_resource_list</code>
+      <description>Wir möchten Sie daran erinnern, eine Ressourcenliste für das Seminar zu erstellen</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Benutzungsabteilung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>ensure_access</code>
+      <description>und gewährleistet einen einfachen Zugriff auf Ihre Seminarressourcen.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>latest_date_submission</code>
+      <description>Der späteste Termin für die Einreichung der Liste ist</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Erinnerung: Erstellen Sie eine Ressourcenliste für das Seminar</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>share_with_students</code>
+      <description>Diese Ressourcenliste wird Ihren Studenten zur Verfügung gestellt</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Erinnerung: Erstellen Sie eine Ressourcenliste für das Seminar</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>update_now</code>
+      <description>Jetzt ändern</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<web_service_result xmlns="http://com/exlibris/urm/general/xmlbeans">
+  <errorsExist>true</errorsExist>
+  <errorList>
+    <error>
+      <errorCode>90101</errorCode>
+      <errorMessage>Table does not exist.</errorMessage>
+      <trackingId>E02-1601094320-LJQQY-AWAE1378936139</trackingId>
+    </error>
+  </errorList>
+</web_service_result>

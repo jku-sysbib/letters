@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>FineFeePaymentReceiptLetter</code>
+	<enabled desc="Yes">true</enabled>
+	<name>Fine Fee Payment Receipt Letter</name>
+	<description>Fine Fee Payment Receipt Letter</description>
+	<channel>EMAIL</channel>
+	<retention_period></retention_period>
+	<customized desc="Yes">true</customized>
+	<patron_facing desc="Yes">true</patron_facing>
+	<updated_by>exl_api</updated_by>
+	<update_date>2023-01-16Z</update_date>
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/FineFeePaymentReceiptLetter">FineFeePaymentReceiptLetter</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+		&lt;!-- 2018-01-30: WA: BuchungsID ausgeblendet --&gt;
+		&lt;!-- 2018-01-30: WA: Label 'note' (Notiz) verwendet fuer 'Folgende Gebuehren wurden von Ihnen bezahlt:'. Urspruengliche Verwendung: Bemerkungsspalte in der Kostenaufstellungstabelle --&gt;
+		&lt;!-- 2018-01-30: WA: Waehrungsbezeichnung bei Gesamtbetrag hinzugefuegt --&gt;
+
+
+		&lt;xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+		&lt;xsl:include href="header.xsl" /&gt;
+		&lt;xsl:include href="senderReceiver.xsl" /&gt;
+		&lt;xsl:include href="mailReason.xsl" /&gt;
+		&lt;xsl:include href="footer.xsl" /&gt;
+		&lt;xsl:include href="style.xsl" /&gt;
+		&lt;!--xsl:include href="recordTitle.xsl" /--&gt;
+
+		&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+		&lt;head&gt;
+		&lt;xsl:call-template name="generalStyle" /&gt;
+		&lt;/head&gt;
+
+		&lt;body&gt;
+		&lt;xsl:attribute name="style"&gt;
+		&lt;xsl:call-template name="bodyStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+
+		&lt;xsl:call-template name="head" /&gt; &lt;!-- header.xsl --&gt;
+		&lt;xsl:call-template name="senderReceiver" /&gt; &lt;!-- SenderReceiver.xsl --&gt;
+
+		&lt;br /&gt;
+		&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+
+		&lt;!-- WA: hide transation id
+		&lt;xsl:if test="notification_data/transaction_id != ''" &gt;
+		&lt;h4&gt;@@transaction_id@@: &lt;xsl:value-of select="/notification_data/transaction_id"/&gt;&lt;/h4&gt;
+		&lt;/xsl:if&gt;
+		--&gt;
+
+		&lt;h4 style="margin-left:0.5em;"&gt;@@note@@:&lt;/h4&gt;
+
+		&lt;xsl:for-each select="notification_data/labels_list"&gt;
+		&lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+		&lt;tr&gt;
+		&lt;td&gt;&lt;xsl:value-of select="letter.fineFeePaymentReceiptLetter.message"/&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;/table&gt;
+		&lt;br /&gt;
+
+		&lt;/xsl:for-each&gt;
+		&lt;table cellpadding="5" class="listing"&gt;
+		&lt;xsl:attribute name="style"&gt;
+		&lt;xsl:call-template name="mainTableStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;tr&gt;
+		&lt;th&gt;@@fee_type@@&lt;/th&gt;
+		&lt;th&gt;@@payment_date@@&lt;/th&gt;
+		&lt;th align="right"&gt;@@paid_amount@@&lt;/th&gt;
+		&lt;!--th&gt;@@payment_method@@&lt;/th--&gt;
+		&lt;!--th&gt;@@note@@&lt;/th--&gt;
+		&lt;/tr&gt;
+		&lt;xsl:for-each select="notification_data/user_fines_fees_list/user_fines_fees"&gt;
+		&lt;xsl:if test="fines_fee_transactions/fines_fee_transaction/transaction_amount_display != '0.00'"&gt;
+		&lt;tr&gt;
+		&lt;td&gt;&lt;xsl:value-of select="fine_fee_type_display"/&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;xsl:value-of select="translate(create_date,'/','.')"/&gt;&lt;/td&gt;
+		&lt;td align="right"&gt;&lt;xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_ammount/currency"/&gt;&amp;#160;&lt;xsl:value-of
+		select="fines_fee_transactions/fines_fee_transaction/transaction_amount_display"/&gt;&lt;/td&gt;
+		&lt;!--td&gt;&lt;xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_method"/&gt;&lt;/td--&gt;
+		&lt;!--td&gt;&lt;xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_note"/&gt;&lt;/td--&gt;
+		&lt;/tr&gt;
+		&lt;/xsl:if&gt;
+		&lt;/xsl:for-each&gt;
+
+		&lt;tr&gt;
+		&lt;td&gt; &lt;/td&gt;
+		&lt;td align="right"&gt;&lt;b&gt;@@total@@:&lt;/b&gt;&lt;/td&gt;
+		&lt;td align="right"&gt;&lt;xsl:choose&gt;&lt;xsl:when
+		test="notification_data/currency='EURO_MEMBER_COUNTRIES_EURO'"&gt;&lt;xsl:text&gt;EUR&lt;/xsl:text&gt;&lt;/xsl:when&gt;&lt;xsl:otherwise&gt;&lt;xsl:value-of
+		select="notification_data/currency"/&gt;&lt;/xsl:otherwise&gt;&lt;/xsl:choose&gt;&amp;#160;&lt;xsl:value-of select="notification_data/total_amount_paid"/&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+
+		&lt;/table&gt;
+		&lt;br /&gt;
+		&lt;table&gt;
+
+		&lt;tr&gt;&lt;td&gt;@@sincerely@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@department@@&lt;/td&gt;&lt;/tr&gt;
+
+		&lt;/table&gt;
+
+		&lt;xsl:call-template name="lastFooter" /&gt; &lt;!-- footer.xsl --&gt;
+		&lt;!--xsl:call-template name="contactUs" /--&gt;
+		&lt;/body&gt;
+		&lt;/html&gt;
+		&lt;/xsl:template&gt;
+
+		&lt;/xsl:stylesheet&gt;
+	</xsl>
+</letter>

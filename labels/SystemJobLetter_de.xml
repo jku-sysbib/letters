@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>SystemJobLetter</name>
+  <description>System Job Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-11Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Systemprozess-Benachrichtigung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

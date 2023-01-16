@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>LegantoUpcomingDueDatesNotificationsLetter</code><enabled desc="Yes">true</enabled><name>Leganto Upcoming Due Dates Notifications Email Letter</name><description>Leganto Upcoming Due Dates Notifications Email Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="Yes">true</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/LegantoUpcomingDueDatesNotificationsLetter">LegantoUpcomingDueDatesNotificationsLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+	&lt;xsl:include href="header.xsl" /&gt;
+	&lt;xsl:include href="senderReceiver.xsl" /&gt;
+	&lt;xsl:include href="mailReason.xsl" /&gt;
+	&lt;xsl:include href="footer.xsl" /&gt;
+	&lt;xsl:include href="style.xsl" /&gt;
+	&lt;xsl:include href="recordTitle.xsl" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+			&lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+				&lt;/title&gt;
+
+				&lt;xsl:call-template name="generalStyle" /&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;xsl:attribute name="style"&gt;
+          &lt;xsl:call-template name="bodyStyleCss" /&gt;&lt;!-- style.xsl --&gt;
+        &lt;/xsl:attribute&gt;
+
+				&lt;xsl:call-template name="head" /&gt;&lt;!-- header.xsl --&gt;
+				&lt;xsl:call-template name="senderReceiver" /&gt; &lt;!-- SenderReceiver.xsl --&gt;
+
+				&lt;br /&gt;
+				&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+
+				&lt;div class="messageArea"&gt;
+					&lt;div class="messageBody"&gt;
+
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"
+							style="width:100%; background-color: #f3f7f8; padding: 0px 25px 25px 25px; border-bottom: 2px solid #dce8eb; font-family: 'Source Sans Pro' !important;padding: 25px 0 15px 0;"&gt;
+
+							&lt;tr&gt;
+								&lt;td style="font-size:18px;padding: 0px 0 5px 10px;"&gt;
+									@@due_dates_approaching@@
+									&lt;br /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;xsl:for-each
+								select="notification_data/courses_to_citations/course_citations_wrapper"&gt;
+								&lt;tr&gt;								
+									&lt;td style="padding:0 0 5px 10px;"&gt;		
+									&lt;br /&gt;																	
+										&lt;strong&gt;
+											&lt;xsl:value-of select="course/name" /&gt;
+										&lt;/strong&gt;
+										&amp;#160;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+								&lt;xsl:for-each select="citations/reading_list_citation"&gt;
+									&lt;tr&gt;
+										&lt;td style="padding:0 0 5px 10px;"&gt;
+											&lt;xsl:value-of select="due_date" /&gt;
+											-
+											&lt;xsl:value-of select="title" /&gt;
+											&amp;#160;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:for-each&gt;
+							&lt;/xsl:for-each&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;br /&gt;
+									&lt;xsl:if test="notification_data/leganto_url  !=''"&gt;
+										&lt;span style="padding:0 0 5px 10px;"&gt;
+											@@see_all_your_lists@@
+											&lt;xsl:element name="a"&gt;
+												&lt;xsl:attribute name="href"&gt;
+									&lt;xsl:value-of select="notification_data/leganto_url" /&gt;
+								&lt;/xsl:attribute&gt;
+												&lt;xsl:attribute name="style"&gt;
+									&lt;xsl:value-of select="'color:#337ab7;font-weight:bold;'" /&gt;
+								&lt;/xsl:attribute&gt;
+												@@go_leganto@@
+											&lt;/xsl:element&gt;
+										&lt;/span&gt;
+									&lt;/xsl:if&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+						&lt;br /&gt;
+
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;!-- footer.xsl --&gt;
+				&lt;xsl:call-template name="lastFooter" /&gt;
+				&lt;xsl:call-template name="myAccount" /&gt;
+				&lt;xsl:call-template name="contactUs" /&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</xsl></letter>

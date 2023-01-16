@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>LenderRenewResponseEmailLetter</name>
+  <description>Lender Renew Response Email Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>dueDate</code>
+      <description>Due Date</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Lender Renew Response Email Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Lender Renew Response Email Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-fernleihe@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>request</code>
+      <description>this letter is a response to your recent request to renew a Resource Sharing loan from our library.</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>fernleihe.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-16Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>renewAnswer</code>
+      <description>Renew Answer</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestDate</code>
+      <description>Request Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestId</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>signature</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>supplyDate</code>
+      <description>Supply Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

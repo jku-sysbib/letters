@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulPlaceOnHoldShelfLetter</name>
+  <description>On Hold Shelf Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-leihstelle@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-23Z</update_date>
+    </row>
+    <row>
+      <code>note_item_held_until</code>
+      <description>Bereitgestellt bis</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2022-06-14Z</update_date>
+    </row>
+    <row>
+      <code>following_item_requested_on</code>
+      <description>Das folgende Exemplar</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-05-08Z</update_date>
+    </row>
+    <row>
+      <code>notes_affect_loan</code>
+      <description>Anmerkungen mit möglichen Auswirkungen auf die Ausleihe</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Bereitstellungsbrief</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-06Z</update_date>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Johannes Kepler Universität Linz, Universitätsbibliothek</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-06Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>additional_id</code>
+      <description>&lt;b&gt;Hinweis zur Bibliothek Juridicum:&lt;/b&gt; Für Studierende und externe Benützer*innen &lt;b&gt;keine Entlehnung&lt;/b&gt;, sondern Bereitstellung zum Scannen oder
+        Kopieren. (Ausnahme: entlehnbare Magazinsbestände). Ausleihe der Freihandbestände nur an JKU-Angehörige und an Diplomand*innen mit eingetragenem Status (Formular auf der
+        Homepage).###BenutzerInnen, die an der Johannes Kepler Universität angestellt sind, wird die Fernleihe per Hauspost zugesandt. Sollten Sie das nicht wünschen, bitten wir Sie um eine kurze
+        Information telefonisch unter: +43 732 2468 4857 oder 3652; via e-Mail: &lt;a href="mailto:fernleihe.bibliothek@jku.at"&gt;fernleihe.bibliothek@jku.at&lt;/a&gt;.</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2022-06-14Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Signatur</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>can_picked_at</code>
+      <description>kann hier abgeholt werden:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>circulation_desk</code>
+      <description>Leihstelle</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Bereitgestellt</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

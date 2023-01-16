@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>SAMLCertificateExpirationNotificationLetter</name>
+  <description>SAML certificate expiration notification letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>ADFS_recomendation</code>
+      <description>Wenn Ihre Institution ADFS verwendet, empfehlen wir Ihnen außerdem, das Zertifikat zu ersetzen, um Komplikationen zu vermeiden</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Ihre.Abteilung@organisation.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Alma Systemadministrationsteam</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>expiry_reminder</code>
+      <description>Dies ist eine automatische Erinnerung daran, dass das SAML-Zertifikat mit dem Code ''{0}'', der von Ihrer Institution verwendet wird, am {1} abläuft</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>further_questions</code>
+      <description>Wenn Sie weitere Fragen haben, öffnen Sie bitte einen Support-Case</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>greetings</code>
+      <description>Sehr geehrter Bibliothekssystemadministrator</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Ihr SAML-Zertifikat läuft bald ab</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>linked_instructions</code>
+      <description>Ersetzen eines signierten Zertifikats</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>recomendation</code>
+      <description>Wir empfehlen, sich an die IT-Abteilung Ihrer Institution zu wenden und bei Bedarf das Zertifikat für Alma und / oder Primo VE zu ersetzen. Wenn Sie das Zertifikat ersetzen, muss
+        dies in Abstimmung mit Ihrem IDP erfolgen. Weitere Informationen finden Sie unter</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Benachrichtigung zum Ablauf des SAML-Zertifikats</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

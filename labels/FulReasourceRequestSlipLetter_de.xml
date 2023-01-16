@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulReasourceRequestSlipLetter</name>
+  <description>Ful Resource Request Slip Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>location</code>
+      <description>Standort</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Vormerkbeleg</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>requested_for</code>
+      <description>BestellerIn</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-12Z</update_date>
+    </row>
+    <row>
+      <code>additional_id</code>
+      <description>Benutzergruppe</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-04-23Z</update_date>
+    </row>
+    <row>
+      <code>chron_m</code>
+      <description>Exemplarrichtlinie</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-04-23Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>accession_number</code>
+      <description>Zugangsnummer</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>alt_call_number</code>
+      <description>Exemplarsignatur/en</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Signatur</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_i</code>
+      <description>Chronologie I</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_j</code>
+      <description>Chronologie J</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_k</code>
+      <description>Chronologie K</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_l</code>
+      <description>Chronologie L</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>copyId</code>
+      <description>Exemplar-ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>edition</code>
+      <description>Ausgabe</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>email</code>
+      <description>E-Mail</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_a</code>
+      <description>Zählung A</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_b</code>
+      <description>Zählung B</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_c</code>
+      <description>Zählung C</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_d</code>
+      <description>Zählung D</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_e</code>
+      <description>Zählung E</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_f</code>
+      <description>Zählung F</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_g</code>
+      <description>Zählung G</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_h</code>
+      <description>Zählung H</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>expiration_date</code>
+      <description>Ablaufdatum</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>external_id</code>
+      <description>Externe ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>imprint</code>
+      <description>Impressum</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>inventory_number</code>
+      <description>Inventarnummer/n</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>isbn</code>
+      <description>ISBN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issn</code>
+      <description>ISSN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>item_barcode</code>
+      <description>Strichcode des Exemplars</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>manual_description_note</code>
+      <description>Die folgende manuelle Beschreibung wurde in dieser Bestellung spezifiziert</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>move_to_library</code>
+      <description>Zielort</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note_item_specified_request</code>
+      <description>Bitte beachten Sie: Ein bestimmtes Exemplar wird in dieser Bestellung näher beschrieben</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>parsedIssueLevelDescription</code>
+      <description>geparste Beschreibung des Zeitschriftenhefts</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>permanentLibrary</code>
+      <description>Permanente Bibliothek</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>permanentLocation</code>
+      <description>Permanenter Standort</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>please_note</code>
+      <description>Bitte beachten Sie</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>proxy_requester</code>
+      <description>Proxy-Besteller</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_date</code>
+      <description>Bestelldatum</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_id</code>
+      <description>Bestell-ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_note</code>
+      <description>Bestell-Notiz</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_type</code>
+      <description>Bestelltyp</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>resource_sharing_request_id</code>
+      <description>Resource sharing internal request id</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_location_for_item</code>
+      <description>Regalstandort</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_locations_for_holding</code>
+      <description>Die Ressource kann an einem der folgenden Standorte gefunden werden</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Vormerkungs-Beleg</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>supplied_to</code>
+      <description>Bereitgestellt für</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>system_notes</code>
+      <description>Systemnotizen</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>tel</code>
+      <description>Tel.</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

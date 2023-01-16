@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>LicensePrintoutLetter</code><enabled desc="Yes">true</enabled><name>License Printout Letter</name><description>License Printout Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="No">false</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/LicensePrintoutLetter">LicensePrintoutLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+	&lt;xsl:include href="header.xsl" /&gt;
+	&lt;xsl:include href="senderReceiver.xsl" /&gt;
+	&lt;xsl:include href="mailReason.xsl" /&gt;
+	&lt;xsl:include href="footer.xsl" /&gt;
+	&lt;xsl:include href="style.xsl" /&gt;
+	&lt;xsl:variable name="conta1"&gt;
+		0
+	&lt;/xsl:variable&gt;
+	&lt;xsl:variable name="stepType"
+		select="/notification_data/request/work_flow_entity/step_type" /&gt;
+	&lt;xsl:variable name="externalRequestId"
+		select="/notification_data/external_request_id" /&gt;
+	&lt;xsl:variable name="externalSystem" select="/notification_data/external_system" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+					&lt;xsl:for-each select="notification_data"&gt;
+						&lt;h3&gt;
+							&lt;strong&gt;@@Dear_Publisher@@&lt;/strong&gt;
+							&lt;br /&gt;
+
+
+							&lt;br /&gt;
+							&lt;br /&gt;
+							&lt;br /&gt;
+
+
+						&lt;/h3&gt;
+					&lt;/xsl:for-each&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/xsl:template&gt;
+
+
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;head&gt;
+				&lt;xsl:call-template name="generalStyle" /&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;xsl:attribute name="style"&gt;
+          &lt;xsl:call-template name="bodyStyleCss" /&gt;&lt;!-- style.xsl --&gt;
+        &lt;/xsl:attribute&gt;
+
+				&lt;xsl:call-template name="head" /&gt;&lt;!-- header.xsl --&gt;
+				&lt;!-- &lt;xsl:call-template name="senderReceiver" /&gt; SenderReceiver.xsl --&gt;
+
+				&lt;br /&gt;
+				&lt;!-- &lt;xsl:call-template name="toWhomIsConcerned" /&gt; mailReason.xsl --&gt;
+
+				&lt;div class="messageArea"&gt;
+					&lt;div class="messageBody"&gt;
+
+						&lt;table cellspacing="0" cellpadding="5" border="0"
+							style="width:100%; padding: 0px 25px 25px 25px; border-bottom: 2px solid #dce8eb; font-family: 'Source Sans Pro' !important;padding: 25px 0 15px 0;"&gt;
+
+							&lt;tr&gt;
+								&lt;td style="font-size:30px;padding: 0px 0 5px 10px;"&gt;
+									&lt;b&gt;
+
+										&lt;xsl:value-of select="notification_data/license/name" /&gt;
+									&lt;/b&gt;
+									&lt;br /&gt;
+									&lt;br /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td style="font-size:18px;padding: 0px 0 5px 10px;"&gt;
+									&lt;b&gt;
+										@@licenseCode@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/code" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@licenseType@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/type" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@status@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/status" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@signedBy@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/license_signedby" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@SignedOn@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/license_signed" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@startDate@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/license_begins" /&gt;
+									&lt;b&gt;
+										-
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/license_ends" /&gt;
+									&lt;br /&gt;
+
+									&lt;b&gt;
+										@@licensor@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/licensor" /&gt;
+									&lt;br /&gt;
+									&lt;b&gt;
+										@@URI@@:
+									&lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/license/uri" /&gt;
+									&lt;br /&gt;
+									&lt;br /&gt;
+									&lt;br /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td style="font-size:18px;padding: 0px 0 0px 0px;"&gt;
+									&lt;b&gt;@@group_settings@@:
+									&lt;/b&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;br /&gt;
+							&lt;xsl:for-each
+								select="notification_data/group_settings/license_af_management"&gt;
+								&lt;tr&gt;
+									&lt;td style="font-size:18px"&gt;
+										&lt;b&gt;@@group_name@@:&lt;/b&gt;
+										&lt;xsl:value-of select="group_name" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:for-each&gt;
+							&lt;br /&gt;
+							&lt;br /&gt;
+
+
+							&lt;xsl:for-each select="notification_data/list/term_license"&gt;
+								&lt;tr&gt;
+									&lt;td style="font-size:18px;padding: 0px 0 5px 10px;"&gt;
+										&lt;b&gt;@@licenseTerms@@:
+										&lt;/b&gt;
+									&lt;/td&gt;
+									&lt;td style="padding: 0px 0px 0px 5px;"&gt;
+
+										&lt;xsl:value-of select="field_label" /&gt;
+									&lt;/td&gt;
+									&lt;td&gt;
+										&lt;b&gt;@@term_type_display@@:&lt;/b&gt;
+										&lt;xsl:value-of select="comment" /&gt;
+									&lt;/td&gt;
+
+								&lt;/tr&gt;
+							&lt;/xsl:for-each&gt;
+						&lt;/table&gt;
+
+						&lt;br /&gt;
+
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+
+				&lt;xsl:choose&gt;
+					&lt;xsl:when test="notification_data/license/type='NEGOTIATION' "&gt;
+
+						&lt;table cellspacing="0" cellpadding="5" border="0"
+							style="width:100%;  padding: 0px 25px 25px 25px; border-bottom: 2px solid #dce8eb; font-family: 'Source Sans Pro' !important;padding: 25px 0 15px 0;"&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+
+									&lt;h3&gt;
+										&lt;strong&gt;@@negotiation_details@@&lt;/strong&gt;
+										&lt;br /&gt;
+									&lt;/h3&gt;
+
+									&lt;xsl:for-each
+										select="notification_data/neg_license_rep_list/neg_license_rep"&gt;
+										&lt;div&gt;
+											&lt;h4&gt;
+												&lt;strong&gt;@@negotiation@@&lt;/strong&gt;
+												&lt;br /&gt;
+											&lt;/h4&gt;
+											&lt;b&gt;
+												@@member_name@@
+											&lt;/b&gt;
+											&lt;xsl:value-of select="neg_license/member_name" /&gt;
+
+											&lt;br /&gt;
+
+
+											&lt;xsl:choose&gt;
+												&lt;xsl:when test="/notification_data/license/multiyear='true' "&gt;
+
+													&lt;b&gt;@@price_per_year@@:&lt;/b&gt;
+													&lt;xsl:value-of select="neg_license/price_per_year" /&gt;
+													&amp;#xA0;
+													&lt;xsl:value-of select="neg_license/currency" /&gt;
+													&lt;br /&gt;
+													&lt;b&gt;@@price_increase@@:&lt;/b&gt;
+													&lt;xsl:value-of select="neg_license/price_increase" /&gt;
+												&lt;/xsl:when&gt;
+												&lt;xsl:otherwise&gt;
+													&lt;b&gt;@@price@@:&lt;/b&gt;
+													&lt;xsl:value-of select="neg_license/price" /&gt;
+													&amp;#xA0;
+													&lt;xsl:value-of select="neg_license/currency" /&gt;
+												&lt;/xsl:otherwise&gt;
+											&lt;/xsl:choose&gt;
+											&lt;!-- &amp;#xA0;
+											&lt;xsl:value-of select="neg_license/currency" /&gt; --&gt;
+											&lt;br /&gt;
+											&lt;b&gt;
+												@@start_date@@:
+											&lt;/b&gt;
+											&lt;xsl:value-of select="neg_license/start_date" /&gt;
+											&lt;br /&gt;
+											&lt;b&gt;
+												@@end_date@@:
+											&lt;/b&gt;
+											&lt;xsl:value-of select="neg_license/end_date" /&gt;
+											&lt;br /&gt;
+											&lt;h4&gt;
+												&lt;strong&gt;@@contact_people@@&lt;/strong&gt;
+												&lt;br /&gt;
+											&lt;/h4&gt;
+											&lt;xsl:for-each select="negotiation_contact_ui/negotiation_contact_ui"&gt;
+												&lt;b&gt;
+													@@fisrt_name@@:
+												&lt;/b&gt;
+												&lt;xsl:value-of select="first_name" /&gt;
+
+												&lt;br /&gt;
+												&lt;b&gt;
+													@@last_name@@:
+												&lt;/b&gt;
+												&lt;xsl:value-of select="last_name" /&gt;
+
+												&lt;br /&gt;
+												&lt;b&gt;
+													@@email@@:
+												&lt;/b&gt;
+												&lt;xsl:value-of select="mail" /&gt;
+
+												&lt;br /&gt;
+												&lt;br /&gt;
+
+
+											&lt;/xsl:for-each&gt;
+
+										&lt;/div&gt;
+									&lt;/xsl:for-each&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+					&lt;/xsl:when&gt;
+					&lt;xsl:otherwise&gt;
+
+					&lt;/xsl:otherwise&gt;
+				&lt;/xsl:choose&gt;
+
+				&lt;xsl:choose&gt;
+					&lt;xsl:when test="notification_data/license/type='ADDENDUM' "&gt;
+
+						&lt;table cellspacing="0" cellpadding="5" border="0"
+							style="width:100%; padding: 0px 25px 25px 25px; border-bottom: 2px solid #dce8eb; font-family: 'Source Sans Pro' !important;padding: 25px 0 15px 0;"&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+
+									&lt;h3&gt;
+										&lt;strong&gt;@@parent_license@@&lt;/strong&gt;
+										&lt;br /&gt;
+									&lt;/h3&gt;
+
+									&lt;b&gt;
+										@@parent_license_name@@:
+										&lt;xsl:value-of select="notification_data/license/base_license/name" /&gt;
+									&lt;/b&gt;
+									&lt;br /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+					&lt;/xsl:when&gt;
+					&lt;xsl:otherwise&gt;
+
+					&lt;/xsl:otherwise&gt;
+				&lt;/xsl:choose&gt;
+
+				&lt;!-- footer.xsl --&gt;
+				&lt;xsl:call-template name="lastFooter" /&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</xsl></letter>

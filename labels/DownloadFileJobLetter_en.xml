@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>DownloadFileJobLetter</name>
+  <description>Download File Job Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>(null)</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>c.pa.email_body1</code>
+      <description>The digital files you have requested are now available for</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>c.pa.email_body2</code>
+      <description>The content will be available for download for a week.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>c.pa.email_size</code>
+      <description>Size:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Resource Management Department</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Download File Job </description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>link</code>
+      <description>download.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Download files job finished</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

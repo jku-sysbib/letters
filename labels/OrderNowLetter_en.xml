@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>OrderNowLetter</name>
+  <description>Order Now Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>erwerbung@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-07Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Acquisition Department</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Order Now Notification</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>order_now_failed</code>
+      <description>Order Now process completed with error. The order wasn't sent to vendor. Please review the </description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>order_now_succed</code>
+      <description>Order Now process completed successfully. PO Line continued its workflow</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>order_number</code>
+      <description>Order Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pol_reference</code>
+      <description>Order Line Reference</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>rush</code>
+      <description>Order Is Rush</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Order Now Notification</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>vendor_note</code>
+      <description>Vendor Note</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

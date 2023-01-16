@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>DeliveryRegistrationStatusLetter</code>
+	<enabled desc="Yes">true</enabled>
+	<name>Delivery Registration Status Letter</name>
+	<description>Delivery Registration Status Letter</description>
+	<channel>EMAIL</channel>
+	<retention_period></retention_period>
+	<customized desc="No">false</customized>
+	<patron_facing desc="Yes">true</patron_facing>
+	<updated_by />
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/DeliveryRegistrationStatusLetter">DeliveryRegistrationStatusLetter</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+		&lt;xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+		&lt;xsl:include href="header.xsl" /&gt;
+		&lt;xsl:include href="senderReceiver.xsl" /&gt;
+		&lt;xsl:include href="mailReason.xsl" /&gt;
+		&lt;xsl:include href="footer.xsl" /&gt;
+		&lt;xsl:include href="style.xsl" /&gt;
+		&lt;xsl:include href="recordTitle.xsl" /&gt;
+
+		&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+		&lt;xsl:if test="notification_data/languages/string"&gt;
+		&lt;xsl:attribute name="lang"&gt;
+		&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;/xsl:if&gt;
+
+		&lt;head&gt;
+		&lt;title&gt;
+		&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+		&lt;/title&gt;
+
+		&lt;xsl:call-template name="generalStyle" /&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+		&lt;xsl:attribute name="style"&gt;
+		&lt;xsl:call-template name="bodyStyleCss" /&gt;&lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+
+		&lt;xsl:call-template name="head" /&gt;&lt;!-- header.xsl --&gt;
+		&lt;xsl:call-template name="senderReceiver" /&gt; &lt;!-- SenderReceiver.xsl --&gt;
+
+		&lt;br /&gt;
+		&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+
+		&lt;div class="messageArea"&gt;
+		&lt;div class="messageBody"&gt;
+
+		&lt;table role='presentation' &gt;
+		&lt;xsl:variable name="registrationStatus"&gt;&lt;xsl:value-of select="notification_data/delivery_registration/status"/&gt;&lt;/xsl:variable&gt;
+		&lt;xsl:variable name="periodUnit"&gt;&lt;xsl:value-of select="notification_data/delivery_registration/period_unit"/&gt;&lt;/xsl:variable&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="$registrationStatus = 'REGISTERED'"&gt;
+		&lt;tr&gt;&lt;td&gt;@@register_successfully@@ &amp;#34;&lt;xsl:value-of select="notification_data/delivery_registration/title"&gt;&lt;/xsl:value-of&gt;&amp;#34; &lt;/td&gt;&lt;/tr&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="$periodUnit != ''"&gt;
+		&lt;tr&gt;&lt;td&gt;@@notification_sent@@ @@you_will_have@@ &lt;xsl:value-of select="notification_data/delivery_registration/grace_period"&gt;&lt;/xsl:value-of&gt; &lt;xsl:value-of
+		select="concat(' ', $periodUnit)" /&gt; @@to_start_viewing@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:otherwise&gt;
+		&lt;tr&gt;&lt;td&gt;@@current_queue_position@@ &lt;xsl:value-of select="notification_data/delivery_registration/number_in_queue"/&gt; @@in_queue@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@notification_sent@@ @@you_will_have@@ &lt;xsl:value-of select="notification_data/delivery_registration/grace_period"&gt;&lt;/xsl:value-of&gt;
+		@@within_minutes@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:when test="$registrationStatus = 'ITEM_AVAILABLE'"&gt;
+		&lt;xsl:variable name="deliveryUrl"&gt;&lt;xsl:value-of select="notification_data/delivery_registration/delivery_url"/&gt;&lt;/xsl:variable&gt;
+		&lt;tr&gt;&lt;td&gt;&amp;#34;&lt;xsl:value-of select="notification_data/delivery_registration/title"&gt;&lt;/xsl:value-of&gt;&amp;#34; @@item_available@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="$periodUnit != ''"&gt;
+		&lt;tr&gt;&lt;td&gt;@@you_have@@ &lt;xsl:value-of select="notification_data/delivery_registration/grace_period"&gt;&lt;/xsl:value-of&gt; &lt;xsl:value-of select="concat(' ', $periodUnit)" /&gt;
+		@@to_start_viewing@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:when test="$periodUnit = '' and $deliveryUrl = ''"&gt;
+		&lt;tr&gt;&lt;td&gt;@@you_have@@ &lt;xsl:value-of select="notification_data/delivery_registration/grace_period"&gt;&lt;/xsl:value-of&gt; @@within_minutes@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:otherwise&gt;
+		&lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;a href="{$deliveryUrl}" target="_blank"&gt;@@here@@&lt;/a&gt;&lt;/strong&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@you_have@@ &lt;xsl:value-of select="notification_data/delivery_registration/grace_period"&gt;&lt;/xsl:value-of&gt; @@within_minutes@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:when test="$registrationStatus = 'GRACE_PERIOD_EXPIRED'"&gt;
+		&lt;xsl:variable name="deliveryUrl"&gt;&lt;xsl:value-of select="notification_data/delivery_registration/delivery_url"/&gt;&lt;/xsl:variable&gt;
+		&lt;tr&gt;&lt;td&gt;@@time_accessing@@ &amp;#34;&lt;xsl:value-of select="notification_data/delivery_registration/title"&gt;&lt;/xsl:value-of&gt;&amp;#34; @@has_expired@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@you_can_reregister@@ &lt;/td&gt;&lt;/tr&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="$deliveryUrl != ''"&gt;
+		&lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;a href="{$deliveryUrl}" target="_blank"&gt;@@register@@&lt;/a&gt;&lt;/strong&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:when test="$registrationStatus = 'REMOVED'"&gt;
+		&lt;tr&gt;&lt;td&gt;@@removed@@ &amp;#34;&lt;xsl:value-of select="notification_data/delivery_registration/title"&gt;&lt;/xsl:value-of&gt;&amp;#34;&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@contact_library@@ &lt;/td&gt;&lt;/tr&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:otherwise&gt;
+		&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt;
+		&lt;/table&gt;
+		&lt;br /&gt;
+
+		&lt;table role='presentation' &gt;
+		&lt;tr&gt;&lt;td&gt;@@sincerely@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@department@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;/table&gt;
+
+		&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;!-- footer.xsl --&gt;
+		&lt;xsl:call-template name="lastFooter" /&gt;
+		&lt;xsl:call-template name="myAccount" /&gt;
+		&lt;xsl:call-template name="contactUs" /&gt;
+		&lt;/body&gt;
+		&lt;/html&gt;
+		&lt;/xsl:template&gt;
+		&lt;/xsl:stylesheet&gt;
+</xsl>
+</letter>

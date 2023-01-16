@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>ReportAproblemLetter</code><enabled desc="Yes">true</enabled><name>Report a Problem Letter</name><description>Report a problem Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="No">false</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/ReportAproblemLetter">ReportAproblemLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8" standalone="no" ?&gt;
+&lt;xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xsl:version="1.0"&gt;
+	&lt;xsl:output method="xml" encoding="utf-8" indent="yes"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;xsl:element name="html"&gt;
+			&lt;xsl:element name="body"&gt;
+				&lt;xsl:text&gt;
+					Hello, &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					You got a new feedback from
+					&lt;xsl:value-of select="/notification_data/user_email" /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt; . &lt;br /&gt; &lt;br /&gt; &lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					&lt;strong&gt;Problem Description:&lt;/strong&gt;
+					&lt;xsl:value-of
+					select="/notification_data/problem_description" /&gt; &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					&lt;strong&gt;Relevant URL:&lt;/strong&gt;
+					&lt;xsl:value-of
+					select="/notification_data/relevant_url" /&gt; &lt;br /&gt; &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					&lt;strong&gt;Browser:&lt;/strong&gt;
+					&lt;xsl:value-of select="/notification_data/browser" /&gt; &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					&lt;strong&gt;Device:&lt;/strong&gt;
+					&lt;xsl:value-of select="/notification_data/device" /&gt; &lt;br /&gt; &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					Thank you  &lt;br /&gt; &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					* Please note we make the best effort to ensure that this message is error and virus free. &lt;br /&gt;
+				&lt;/xsl:text&gt;
+				&lt;xsl:text&gt;
+					If you don&amp;apos;t trust the sender of this message do not click on any of the above links, respond to the email,
+ 					or provide any sensitive information.
+               	&lt;/xsl:text&gt;
+			&lt;/xsl:element&gt;
+		&lt;/xsl:element&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</xsl></letter>

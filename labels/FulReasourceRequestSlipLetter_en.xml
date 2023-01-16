@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulReasourceRequestSlipLetter</name>
+  <description>Ful Resource Request Slip Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>location</code>
+      <description>Location</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Resource Request Slip Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-05Z</update_date>
+    </row>
+    <row>
+      <code>requested_for</code>
+      <description>Requested For</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-12Z</update_date>
+    </row>
+    <row>
+      <code>additional_id</code>
+      <description>User Group</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-04-23Z</update_date>
+    </row>
+    <row>
+      <code>chron_m</code>
+      <description>Item Policy</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-04-23Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>accession_number</code>
+      <description>Accession Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>alt_call_number</code>
+      <description>Item Call Number/s</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_i</code>
+      <description>Chronology I</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_j</code>
+      <description>Chronology J</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_k</code>
+      <description>Chronology K</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chron_l</code>
+      <description>Chronology L</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>copyId</code>
+      <description>Copy Id</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>edition</code>
+      <description>Edition</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>email</code>
+      <description>Email</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_a</code>
+      <description>Enumeration A</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_b</code>
+      <description>Enumeration B</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_c</code>
+      <description>Enumeration C</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_d</code>
+      <description>Enumeration D</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_e</code>
+      <description>Enumeration E</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_f</code>
+      <description>Enumeration F</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_g</code>
+      <description>Enumeration G</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>enum_h</code>
+      <description>Enumeration H</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>expiration_date</code>
+      <description>Expiration Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>external_id</code>
+      <description>External ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>imprint</code>
+      <description>Imprint</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>inventory_number</code>
+      <description>Inventory Number/s</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>isbn</code>
+      <description>ISBN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issn</code>
+      <description>ISSN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>item_barcode</code>
+      <description>Item Barcode</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>manual_description_note</code>
+      <description>The following manual description has been specified in this request</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>move_to_library</code>
+      <description>Destination</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note_item_specified_request</code>
+      <description>Please note: A specific item is specified in this request</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>parsedIssueLevelDescription</code>
+      <description>parsed Issue Level Description</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>permanentLibrary</code>
+      <description>Permanent Library</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>permanentLocation</code>
+      <description>Permanent Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>please_note</code>
+      <description>Please note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>proxy_requester</code>
+      <description>Proxy Requester</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_date</code>
+      <description>Request Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_id</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_note</code>
+      <description>Request Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_type</code>
+      <description>Request Type</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>resource_sharing_request_id</code>
+      <description>Resource sharing internal request id</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_location_for_item</code>
+      <description>Shelving Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_locations_for_holding</code>
+      <description>The resource can be found at any of the following shelving locations</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Resource Request Slip</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>supplied_to</code>
+      <description>Supplied To</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>system_notes</code>
+      <description>System Notes</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>tel</code>
+      <description>Tel</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

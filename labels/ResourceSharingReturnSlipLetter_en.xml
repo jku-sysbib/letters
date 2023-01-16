@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>ResourceSharingReturnSlipLetter</name>
+  <description>Resource Sharing Return Slip Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-fernleihe@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>fernleihe.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-02Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Resource Sharing Return Slip Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Resource Sharing Return Slip Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>returned</code>
+      <description>The following item borrowed from your institution is being returned to you.</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>address</code>
+      <description>Shipping Address</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>arrival_date</code>
+      <description>Arrival Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>email</code>
+      <description>Email</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issue</code>
+      <description>Issue</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>journal_title</code>
+      <description>Journal Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note_to_partner</code>
+      <description>Note to Partner</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>phone</code>
+      <description>Phone</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_id</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>required_return_date</code>
+      <description>Required Return Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>returned_to</code>
+      <description>Returned to</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>signature</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>source</code>
+      <description>Source</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>volume</code>
+      <description>Volume</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulRenewEmailLetter</name>
+  <description>Ful Renew Email Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>fernleihe.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Verlängerungsanfrage</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Verlängerungsanfrage (%reqId%)</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-fernleihe@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>requested_by</code>
+      <description>Wir wollen die Ausleihe der folgenden Fernleihebestellung verlängern. Setzen Sie uns bitte in Kenntnis, ob und für welches Datum sie verlängert werden kann.</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-02-08Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_person_name</code>
+      <description>Additional Person Name</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>article_or_chapter_title</code>
+      <description>Article\\Chapter Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author_initials</code>
+      <description>Author Initials</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chapter</code>
+      <description>Chapter</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>date</code>
+      <description>Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>desired_due_date</code>
+      <description>Desired due date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>doi</code>
+      <description>DOI</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>edition</code>
+      <description>Edition</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>end_page</code>
+      <description>End Page</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>format</code>
+      <description>Format</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>isbn</code>
+      <description>ISBN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issn</code>
+      <description>ISSN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issue</code>
+      <description>Issue</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>journal_title</code>
+      <description>Journal Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>maximum_fee</code>
+      <description>Maximum Fee</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note_to_partner</code>
+      <description>Note to partner</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>original_due_date</code>
+      <description>Original due date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pages</code>
+      <description>Pages</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>part</code>
+      <description>Part</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>partner_address</code>
+      <description>Partner's Address</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>partner_email</code>
+      <description>Partner's Email</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>place_of_publication</code>
+      <description>Place of Publication</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pmid</code>
+      <description>PMID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>publication_date</code>
+      <description>Publication Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>publisher</code>
+      <description>Publisher</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>receiving_date</code>
+      <description>Receiving date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_format</code>
+      <description>Request Format</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_id</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_note</code>
+      <description>Request Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requested</code>
+      <description>We would like to renew the loan of the following resource sharing request. Please let us know if it can be renewed and for which date.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>series_title_number</code>
+      <description>Series Title Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>signature</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>source</code>
+      <description>Source</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>start_page</code>
+      <description>Start Page</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>volume</code>
+      <description>Volume</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>year</code>
+      <description>Year</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

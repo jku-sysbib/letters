@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>POLineClaimAggregatedLetter</code>
+	<enabled desc="No">false</enabled>
+	<name>PO Line Aggregated Claim Letter</name>
+	<description>PO Line Aggregated Claim Letter</description>
+	<channel>EMAIL</channel>
+	<retention_period></retention_period>
+	<customized desc="No">false</customized>
+	<patron_facing desc="No">false</patron_facing>
+	<updated_by>AK122837</updated_by>
+	<update_date>2022-12-14Z</update_date>
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/POLineClaimAggregatedLetter">POLineClaimAggregatedLetter</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+		&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+		&lt;xsl:include href="header.xsl" /&gt;
+		&lt;xsl:include href="senderReceiver.xsl" /&gt;
+		&lt;xsl:include href="mailReason.xsl" /&gt;
+		&lt;xsl:include href="footer.xsl" /&gt;
+		&lt;xsl:include href="style.xsl" /&gt;
+
+		&lt;xsl:variable name="conta1"&gt;0&lt;/xsl:variable&gt;
+		&lt;xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type" /&gt;
+		&lt;xsl:variable name="externalRequestId" select="/notification_data/external_request_id" /&gt;
+		&lt;xsl:variable name="externalSystem" select="/notification_data/external_system" /&gt;
+
+		&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+		&lt;head&gt;
+		&lt;xsl:call-template name="generalStyle" /&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+		&lt;xsl:attribute name="style"&gt;
+		&lt;xsl:call-template name="bodyStyleCss" /&gt;
+		&lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;xsl:call-template name="head" /&gt;
+		&lt;!-- header.xsl --&gt;
+		&lt;xsl:call-template name="senderReceiver" /&gt;
+		&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+		&lt;div class="messageArea"&gt;
+		&lt;div class="messageBody"&gt;
+		&lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+		&lt;tr&gt;
+		&lt;td&gt;&lt;xsl:value-of select="notification_data/claim/claim_text"/&gt;&lt;br /&gt;
+		@@please_supply@@.
+		&lt;/td&gt;
+		&lt;/tr&gt;
+
+		&lt;tr&gt;
+		&lt;td&gt;
+		&lt;xsl:for-each select="notification_data/line_details_list/line_claim_letter_details"&gt;
+		&lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+		&lt;tr&gt;
+		&lt;td&gt;
+		&lt;xsl:value-of select="index" /&gt;
+		&lt;br /&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="reclaim_message!='' "&gt;
+		&lt;xsl:value-of select="reclaim_message" /&gt;
+		&lt;br /&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="poline_type='ELECTRONIC' "&gt;
+		&lt;strong&gt;@@claim@@:&lt;/strong&gt;&amp;#160;@@not_yet_activated@@
+		&lt;br /&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:otherwise&gt;
+		&lt;strong&gt;@@claim@@:&lt;/strong&gt;&amp;#160;@@not_yet_arrived@@
+		&lt;br /&gt;
+		&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt;
+		&lt;strong&gt;@@order_line_ref_num@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="poline_reference_number" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@order_date@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="poline_date" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@vendor_ref_num@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="vendor_refernce_number" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@delivery_type@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="shipping_method" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@vendor_note@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="vendor_note" /&gt;
+		&lt;br /&gt;
+		&lt;xsl:choose&gt;
+		&lt;xsl:when test="poline_type!='ELECTRONIC' "&gt;
+		&lt;strong&gt;@@num_units_arrived@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="items_received" /&gt;
+		&lt;br /&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+		&lt;strong&gt;@@num_units_ordered@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="items_oredered" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@currency@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="currency" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@unit_price@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="price" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@total_price@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="total_price" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@vendor_contact@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="vendor_contact_persons" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@title@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="title" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@author@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="author" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@publication_date@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="publication_date" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@publication_place@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="publication_place" /&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@publisher@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="publisher" /&gt;
+		&lt;xsl:choose &gt;
+		&lt;xsl:when test="last_receive_item_description!=''"&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@last_receive_item_description@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="last_receive_item_description" /&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+		&lt;xsl:choose &gt;
+		&lt;xsl:when test="last_received_date!=''"&gt;
+		&lt;br /&gt;
+		&lt;strong&gt;@@last_received_date@@:&lt;/strong&gt;&amp;#160;&lt;xsl:value-of select="last_received_date" /&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+		&lt;/td&gt;
+
+		&lt;/tr&gt;
+		&lt;xsl:choose &gt;
+		&lt;xsl:when test="issues_or_copies!=''"&gt;
+		&lt;strong&gt;@@missing_issues@@:&lt;/strong&gt;
+		&lt;br /&gt;
+		&lt;table cellpadding="5" class="listing"&gt;
+		&lt;xsl:attribute name="style"&gt;
+		&lt;xsl:call-template name="mainTableStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;tr&gt;
+		&lt;th&gt;@@item_description@@&lt;/th&gt;
+		&lt;th&gt;@@expected_arrival_date@@&lt;/th&gt;
+		&lt;th&gt;@@SICI@@&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;xsl:for-each select="issues_or_copies/issue_or_copy"&gt;
+		&lt;tr&gt;
+		&lt;td&gt;&lt;xsl:value-of select="item_description"/&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;xsl:value-of select="expected_arrival_date"/&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;xsl:value-of select="sici"/&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;/xsl:for-each&gt;
+		&lt;/table&gt;
+		&lt;/xsl:when&gt;
+		&lt;/xsl:choose&gt;
+
+		&lt;/table&gt;
+		&lt;/xsl:for-each&gt;
+		&lt;/td&gt;
+		&lt;/tr&gt;
+
+		&lt;/table&gt;
+		&lt;br /&gt;
+		&lt;table&gt;
+
+		&lt;tr&gt;&lt;td&gt;@@sincerely@@&lt;/td&gt;&lt;/tr&gt;
+		&lt;tr&gt;&lt;td&gt;@@department@@&lt;/td&gt;&lt;/tr&gt;
+
+		&lt;/table&gt;
+		&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;xsl:call-template name="lastFooter" /&gt;
+		&lt;!-- footer.xsl --&gt;
+		&lt;/body&gt;
+		&lt;/html&gt;
+		&lt;/xsl:template&gt;
+		&lt;/xsl:stylesheet&gt;
+</xsl>
+</letter>

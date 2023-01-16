@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>NotificationsNgLetter</code><enabled desc="Yes">true</enabled><name>User Notifications (New Gen)</name><description>Letter about Alma notifications</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="No">false</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/NotificationsNgLetter">NotificationsNgLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string" /&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+			&lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="/notification_data/title" /&gt;
+				&lt;/title&gt;
+
+				&lt;style type="text/css"&gt;
+
+					body {
+					width: 100%;
+					opacity: 1;
+					margin: 0;
+					padding: 0;
+					-webkit-font-smoothing: antialiased;
+					mso-margin-top-alt: 0px;
+					mso-margin-bottom-alt: 0px;
+					mso-padding-alt: 0px 0px 0px 0px;
+					font-family: 'Roboto', sans-serif;
+					}
+
+					p,
+					h1,
+					h2,
+					h3,
+					h4 {
+					margin-top: 0;
+					margin-bottom: 0;
+					padding-top: 0;
+					padding-bottom: 0;
+					}
+
+					span.preheader {
+					display: none;
+					font-size: 1px;
+					}
+
+					html {
+					width: 100%;
+					}
+
+					table {
+					font-size:
+					14px;
+					border: 0;
+					}
+
+					#content-wrapper
+					{
+					background-color: #ffffff;
+					margin-top: 50px;
+					}
+				&lt;/style&gt;
+
+			&lt;/head&gt;
+
+			&lt;body&gt;
+				&lt;table role="presentation" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F1F7F8;"&gt;
+
+					&lt;tr&gt;
+						&lt;td height="50" style="font-size: 50px; line-height: 50px;"&gt;&amp;#160; &lt;/td&gt;
+					&lt;/tr&gt;
+
+					&lt;tr&gt;
+						&lt;td align="center"&gt;
+							&lt;table role="presentation" id="content-wrapper" border="0" align="center" width="590" cellpadding="0" cellspacing="0"&gt;
+
+
+
+
+								&lt;tr&gt;
+									&lt;td align="center"&gt;
+										&lt;!--HEADER --&gt;
+										&lt;table role="presentation" border="0" align="center" width="590" height="70" cellpadding="0" cellspacing="0"
+											style="background: url(cid:notification-background.jpg); min-height: 150px; width: 97%;"&gt;
+											&lt;!-- style="background: url(/background.jpg); min-height: 150px; width: 97%;" --&gt;
+
+											&lt;tr&gt;
+												&lt;td align="left" style="padding-left: 20px;"&gt;
+													&lt;img width="100" border="0" style="min-height: 70px; min-width:240px ;" src="cid:logo.jpg" alt="logo" /&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!-- END HEADER --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+								&lt;tr&gt;
+									&lt;td height="25" style="font-size: 25px; line-height: 25px;"&gt;&amp;#160; &lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="25" style="line-height: 25px;"&gt;
+										&lt;!--TITLE --&gt;
+										&lt;table role="presentation" style="padding-left: 20px;"&gt;
+											&lt;tr&gt;
+												&lt;td align="left" style="font-size:24px; font-weight: 400 ;"&gt;
+													&lt;xsl:value-of select="/notification_data/title" /&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!--TITLE --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="5" style="font-size: 5px; line-height: 5px;"&gt;&amp;#160; &lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="16" style=" line-height: 16px;"&gt;
+										&lt;!--DATE --&gt;
+										&lt;table role="presentation" style="padding-left: 20px;"&gt;
+											&lt;tr&gt;
+												&lt;td align="left" style="font-size:16px; font-weight: 300 ;"&gt;
+													&lt;xsl:value-of select="/notification_data/create_date" /&gt;
+													&amp;#160;|
+													&lt;xsl:value-of select="/notification_data/organization_unit/description" /&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!--END DATE --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="25" style="font-size: 25px; line-height: 25px;"&gt;&amp;#160; &lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="16" style=" line-height: 16px;"&gt;
+										&lt;!--TO --&gt;
+										&lt;table role="presentation" style="padding-left: 20px;"&gt;
+											&lt;tr&gt;
+												&lt;td align="left" style="font-size:16px; font-weight: 400 ;"&gt;
+													@@dear@@
+													&lt;strong&gt;
+														&lt;xsl:value-of select="/notification_data/receivers/receiver/user/first_name" /&gt;
+														&amp;#160;
+
+														&lt;xsl:value-of select="/notification_data/receivers/receiver/user/last_name" /&gt;
+														,
+													&lt;/strong&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!--END TO --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="5" style="font-size: 5px; line-height: 5px;"&gt;&amp;#160; &lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td height="16" style=" line-height: 16px;"&gt;
+										&lt;!--DESCRIPTION --&gt;
+										&lt;table role="presentation" style="padding-left: 20px;"&gt;
+											&lt;tr&gt;
+												&lt;td align="left" style="font-size:14px; font-weight: 300 ;"&gt;
+													&lt;xsl:value-of select="/notification_data/description" /&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!--END DESCRIPTION --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+								
+								&lt;tr&gt;
+									&lt;td height="16" style=" line-height: 16px;"&gt;
+										&lt;!--LINK --&gt;
+										&lt;table role="presentation" style="padding-left: 20px;"&gt;
+											&lt;tr&gt;
+												&lt;td align="left" style="font-size:14px; font-weight: 300 ;"&gt;
+													&lt;xsl:element name="a"&gt;
+														&lt;xsl:attribute name="href"&gt;
+															&lt;xsl:value-of select="/notification_data/link"/&gt;
+														&lt;/xsl:attribute&gt;
+														&lt;xsl:value-of select="/notification_data/link_label"/&gt;
+													&lt;/xsl:element&gt;
+												&lt;/td&gt;
+											&lt;/tr&gt;
+										&lt;/table&gt;
+										&lt;!--END LINK --&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+							&lt;/table&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td height="250" style="font-size: 250px; line-height: 250px;"&gt;&amp;#160; &lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+
+
+
+&lt;/xsl:stylesheet&gt;
+
+
+
+
+</xsl></letter>

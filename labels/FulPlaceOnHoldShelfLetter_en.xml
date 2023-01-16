@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulPlaceOnHoldShelfLetter</name>
+  <description>On Hold Shelf Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-leihstelle@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-23Z</update_date>
+    </row>
+    <row>
+      <code>note_item_held_until</code>
+      <description>Hold Shelf Period</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2022-06-14Z</update_date>
+    </row>
+    <row>
+      <code>following_item_requested_on</code>
+      <description>The following item</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2020-05-08Z</update_date>
+    </row>
+    <row>
+      <code>notes_affect_loan</code>
+      <description>Notes that may affect loan</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>On Hold Shelf Letter</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-06Z</update_date>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Circulation Department</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-06Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>additional_id</code>
+      <description>&lt;b&gt;Information in regard to the Juridicum Law Library:&lt;/b&gt; While students and guests are not permitted to check books out at the moment, these materials can be scanned
+        or photocopied. (Exception: materials that can be checked out in magazine inventory). Materials in the library’s open access area may only be checked out by JKU employees or students currently
+        writing a Diploma degree thesis (registered). The form is available on the homepage.###Library users employed at the Johannes Kepler University will receive materials ordered via interlibrary
+        loan through the internal mail service. If you would prefer a different arrangement, please let us know via phone +43 732 2468 4857 or 3652; via e-mail: &lt;a
+        href="mailto:fernleihe.bibliothek@jku.at"&gt;fernleihe.bibliothek@jku.at&lt;/a&gt;.</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2022-06-14Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>can_picked_at</code>
+      <description>can be picked up at </description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>circulation_desk</code>
+      <description>Circulation Desk</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>On Hold Shelf </description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

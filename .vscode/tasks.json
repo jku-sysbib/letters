@@ -1,0 +1,387 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "xslt-js",
+			"label": "render",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
+			"xmlSource": "${input:remember-xml-file}",
+			"resultPath": "${workspaceFolder}/xslt-out/${fileBasenameNoExtension}.html",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"convert2"
+			],
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "render2",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
+			"xmlSource": "${input:remember-xml-file}",
+			"resultPath": "${workspaceFolder}/xslt-out/${fileBasenameNoExtension}.html",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"convert3"
+			],
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"label": "set_env",
+			"type": "shell",
+			"command": "echo ${input:labels-file};echo ${input:xml-file};echo ${input:remember-xml-file}",
+			"problemMatcher": []
+		},
+		{
+			"type": "xslt-js",
+			"label": "convert",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "${workspaceFolder}/convert.xsl",
+			"xmlSource": "${file}",
+			"resultPath": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "convert2",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "convert.xsl",
+			"xmlSource": "${file}",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"dependsOrder": "parallel",
+			"dependsOn": [
+				"conv_footer","conv_checksum_calc","conv_header","conv_mailReason","conv_recordTitle","conv_senderReceiver", "conv_style"
+			],
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "convert3",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${file}",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"dependsOrder": "parallel",
+			"dependsOn": [
+				"conv_footer","conv_checksum_calc","conv_header","conv_mailReason","conv_recordTitle","conv_senderReceiver", "conv_style"
+			],
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "conv_footer",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/footer.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/footer.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "conv_checksum_calc",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/checksum_calc.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/checksum_calc.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},
+		{
+			"type": "xslt-js",
+			"label": "conv_header",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/header.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/header.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},{
+			"type": "xslt-js",
+			"label": "conv_mailReason",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/mailReason.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/mailReason.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},{
+			"type": "xslt-js",
+			"label": "conv_recordTitle",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/recordTitle.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/recordTitle.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},{
+			"type": "xslt-js",
+			"label": "conv_senderReceiver",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/senderReceiver.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/senderReceiver.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},{
+			"type": "xslt-js",
+			"label": "conv_smsRecordTitle",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/smsRecordTitle.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/smsRecordTitle.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		},{
+			"type": "xslt-js",
+			"label": "conv_style",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "conv_comp.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/style.xsl",
+			"parameters": [
+				{
+					"name": "labels-file",
+					"value": "${input:remember-labels-file}"
+				}
+			],
+			"resultPath": "${workspaceFolder}/xsl/style.xsl",
+			"allowSyntaxExtensions40": "off",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"runOptions": {
+				"reevaluateOnRerun": false
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		}
+/*		,
+		{
+			"type": "Live Preview",
+			"workspacePath": "/home/herwig/Dokumente/vs_code/letters/letters",
+			"problemMatcher": [],
+			"label": "Live Preview: Run Server"
+"group": "none"
+		}
+*/	],
+	"inputs": [
+		{
+			"id": "xml-file",
+			"type": "command",
+			"command": "extension.commandvariable.file.pickFile",
+			"args": {
+				"include": "xml/*.xml",
+				"display": "fileName",
+				"keyRemember" : "xml-file"
+				
+			}
+		},
+		{
+      "id": "labels-file",
+      "type": "command",
+      "command": "extension.commandvariable.promptStringRemember",
+      "args": {
+        "key": "labels-file",
+        "description": "labels-file",
+				"default": "${workspaceFolder}/labels/${fileBasenameNoExtension}_de.xml"
+
+      }
+    },
+    {
+      "id": "remember-labels-file",
+      "type": "command",
+      "command": "extension.commandvariable.remember",
+      "args": { "key": "labels-file" }
+    }
+		,
+    {
+      "id": "remember-xml-file",
+      "type": "command",
+      "command": "extension.commandvariable.remember",
+      "args": { "key": "xml-file" }
+    }
+
+/* 		{
+			"id": "labels-file",
+			"type": "command",
+			"command":"memento.promptString",
+			"args":{
+				"id": "labels-file",
+			"description": "xsl-file: ",
+			"default": "${workspaceFolder}/labels/${fileBasenameNoExtension}_de.xml",
+			"placeholder":"xsl-file"
+
+		},
+ 		},
+*/	]
+}

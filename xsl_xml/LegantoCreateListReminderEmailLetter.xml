@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>LegantoCreateListReminderEmailLetter</code><enabled desc="Yes">true</enabled><name>Leganto create list - reminder email</name><description>Leganto create list - reminder email</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="Yes">true</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/LegantoCreateListReminderEmailLetter">LegantoCreateListReminderEmailLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+	&lt;xsl:include href="header.xsl" /&gt;
+	&lt;xsl:include href="senderReceiver.xsl" /&gt;
+	&lt;xsl:include href="mailReason.xsl" /&gt;
+	&lt;xsl:include href="footer.xsl" /&gt;
+	&lt;xsl:include href="style.xsl" /&gt;
+	&lt;xsl:include href="recordTitle.xsl" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+			&lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+				&lt;/title&gt;
+
+				&lt;xsl:call-template name="generalStyle" /&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;xsl:attribute name="style"&gt;
+          &lt;xsl:call-template name="bodyStyleCss" /&gt;&lt;!-- style.xsl --&gt;
+        &lt;/xsl:attribute&gt;
+
+				&lt;xsl:call-template name="head" /&gt;&lt;!-- header.xsl --&gt;
+				&lt;xsl:call-template name="senderReceiver" /&gt; &lt;!-- SenderReceiver.xsl --&gt;
+
+				&lt;br /&gt;
+				&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+
+				&lt;div class="messageArea"&gt;
+					&lt;div class="messageBody"&gt;
+
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"
+							style="width:100%; background-color: #f3f7f8; padding: 0px 25px 25px 25px; border-bottom: 2px solid #dce8eb; font-family: 'Source Sans Pro' !important;padding: 25px 0 15px 0;"&gt;
+
+							&lt;tr&gt;
+								&lt;td style="padding:0 0 5px 10px;"&gt;
+										@@create_resource_list@@
+										"&lt;xsl:value-of select="notification_data/course/code" /&gt; - &lt;xsl:value-of select="notification_data/course/name" /&gt;".
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							
+							&lt;tr&gt;
+								&lt;td style="padding:0 0 5px 10px;"&gt;
+										@@latest_date_submission@@
+										&lt;xsl:value-of select="notification_data/due_date" /&gt;.
+										&lt;br/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;br/&gt;
+							
+							&lt;tr&gt;
+								&lt;td style="padding:0 0 5px 10px;"&gt;
+										@@share_with_students@@
+										@@ensure_access@@
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;br/&gt;
+							&lt;xsl:if test="notification_data/leganto_url  !=''"&gt;
+							&lt;tr&gt;
+								&lt;td style="padding:0 0 5px 10px;"&gt;
+									&lt;xsl:element name="a"&gt;
+										&lt;xsl:attribute name="href"&gt;
+											&lt;xsl:value-of select="notification_data/leganto_url" /&gt;
+										&lt;/xsl:attribute&gt;
+		
+										&lt;xsl:attribute name="style"&gt;
+											&lt;xsl:value-of select="'color:#337ab7;font-weight:bold;'"/&gt;
+										&lt;/xsl:attribute&gt;
+										@@update_now@@
+									&lt;/xsl:element&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+
+						&lt;table&gt;
+							&lt;xsl:attribute name="style"&gt;
+								&lt;xsl:call-template name="listStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+							&lt;/xsl:attribute&gt;
+					
+							 &lt;tr&gt;&lt;td&gt;@@sincerely@@,&lt;/td&gt;&lt;/tr&gt;
+							&lt;tr&gt;&lt;td&gt; @@department@@&lt;/td&gt;&lt;/tr&gt;
+		
+						&lt;/table&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;!-- footer.xsl --&gt;
+				&lt;xsl:call-template name="lastFooter" /&gt;
+				&lt;xsl:call-template name="myAccount" /&gt;
+				&lt;xsl:call-template name="contactUs" /&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</xsl></letter>

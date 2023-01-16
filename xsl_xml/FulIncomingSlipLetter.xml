@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>FulIncomingSlipLetter</code><enabled desc="Yes">true</enabled><name>Ful Incoming Slip Letter</name><description>Ful Incoming Slip Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="No">false</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/FulIncomingSlipLetter">FulIncomingSlipLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+&lt;xsl:variable name="counter" select="0"/&gt;
+
+
+&lt;xsl:include href="header.xsl" /&gt;
+&lt;xsl:include href="senderReceiver.xsl" /&gt;
+&lt;xsl:include href="mailReason.xsl" /&gt;
+&lt;xsl:include href="footer.xsl" /&gt;
+&lt;xsl:include href="style.xsl" /&gt;
+&lt;xsl:include href="recordTitle.xsl" /&gt;
+
+&lt;xsl:template name="id-info"&gt;
+   &lt;xsl:param name="line"/&gt;
+   &lt;xsl:variable name="first" select="substring-before($line,'//')"/&gt;
+   &lt;xsl:variable name="rest" select="substring-after($line,'//')"/&gt;
+    &lt;xsl:if test="$first = '' and $rest = '' "&gt;
+          &lt;!--br/--&gt;
+      &lt;/xsl:if&gt;
+   &lt;xsl:if test="$rest != ''"&gt;
+       &lt;xsl:value-of select="$rest"/&gt;&lt;br/&gt;
+   &lt;/xsl:if&gt;
+   &lt;xsl:if test="$rest = ''"&gt;
+       &lt;xsl:value-of select="$line"/&gt;&lt;br/&gt;
+   &lt;/xsl:if&gt;
+
+&lt;/xsl:template&gt;
+
+  &lt;xsl:template name="id-info-hdr"&gt;
+        &lt;xsl:call-template name="id-info"&gt;
+            &lt;xsl:with-param name="line" select="notification_data/incoming_request/external_request_id"/&gt;
+            &lt;xsl:with-param name="label" select="'Bibliographic Information:'"/&gt;
+         &lt;/xsl:call-template&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match="/"&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+		&lt;xsl:call-template name="generalStyle" /&gt;
+		&lt;/head&gt;
+
+			&lt;body&gt;
+			&lt;xsl:attribute name="style"&gt;
+				&lt;xsl:call-template name="bodyStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+			&lt;/xsl:attribute&gt;
+
+				&lt;xsl:call-template name="head" /&gt; &lt;!-- header.xsl --&gt;
+
+
+
+			&lt;div class="messageArea"&gt;
+				&lt;div class="messageBody"&gt;
+					 &lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@supplied_to@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/partner_name"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+
+						&lt;tr&gt;
+			                &lt;td&gt;
+			                  &lt;b&gt;@@borrower_reference@@: &lt;/b&gt;
+			                   &lt;xsl:call-template name="id-info-hdr"/&gt;
+			                &lt;/td&gt;
+			              &lt;/tr&gt;
+
+
+
+			          &lt;tr&gt;
+							  &lt;td&gt;&lt;b&gt;@@my_id@@: &lt;/b&gt;&lt;img src="externalId.png" alt="externalId" /&gt;&lt;/td&gt;
+				      &lt;/tr&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@format@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/incoming_request/format"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;xsl:if  test="notification_data/incoming_request/needed_by_dummy/full_date" &gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@date_needed_by@@: &lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/incoming_request/needed_by"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+
+						&lt;xsl:if  test="notification_data/incoming_request/note" &gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@request_note@@: &lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/incoming_request/note"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+
+						&lt;xsl:if  test="notification_data/incoming_request/requester_email" &gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@requester_email@@: &lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/incoming_request/requester_email"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+
+						&lt;xsl:if  test="notification_data/assignee != ''" &gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@assignee@@: &lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/assignee"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+
+								&lt;xsl:if test="notification_data/level_of_service !=''"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											&lt;b&gt;@@level_of_service@@: &lt;/b&gt;
+											&lt;xsl:value-of select="notification_data/level_of_service"/&gt;
+										&lt;/td&gt;
+
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+
+						&lt;xsl:for-each select="notification_data/items/physical_item_display_for_printing"&gt;
+							&lt;br&gt;&lt;/br&gt;
+
+							&lt;tr&gt;
+							  &lt;td&gt;&lt;b&gt;@@item_barcode@@: &lt;/b&gt;&lt;img src="cid:{concat(concat('Barcode',position()),'.png')}" alt="{concat('Barcode',position())}" /&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@library@@: &lt;/b&gt;
+									&lt;xsl:value-of select="library_name"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;&lt;b&gt;@@location@@: &lt;/b&gt;&lt;xsl:value-of select="location_name"/&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;xsl:if  test="call_number" &gt;
+								&lt;tr&gt;
+									&lt;td&gt;&lt;b&gt;@@call_number@@: &lt;/b&gt;&lt;xsl:value-of select="call_number"/&gt;&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+
+							&lt;xsl:if  test="shelving_location/string" &gt;
+								&lt;tr&gt;
+									&lt;td&gt;&lt;b&gt;@@shelving_location_for_item@@: &lt;/b&gt;
+									 &lt;xsl:for-each select="shelving_location/string"&gt;
+										&lt;xsl:value-of select="."/&gt;
+									 &amp;#160;
+									 &lt;/xsl:for-each&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/xsl:for-each&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+
+
+
+	&lt;xsl:call-template name="lastFooter" /&gt; &lt;!-- footer.xsl --&gt;
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</xsl></letter>

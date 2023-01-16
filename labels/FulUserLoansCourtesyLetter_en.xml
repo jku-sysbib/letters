@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulUserLoansCourtesyLetter</name>
+  <description>Courtesy Notice</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-leihstelle@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-01-30Z</update_date>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Circulation Department</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Courtesy Letter</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Courtesy Notice</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>loans</code>
+      <description>Loans</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>location</code>
+      <description>Location</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-13Z</update_date>
+    </row>
+    <row>
+      <code>additional_info_1</code>
+      <description>&lt;b&gt;Important note:&lt;/b&gt;&lt;br/&gt;Allen LeserInnen, die uns ihre E-Mail-Adresse mitgeteilt haben, schickt die Universitätsbibliothek vor Ablauf der Leihfrist ein
+        Erinnerungsschreiben per E-Mail, das sie an die Rückgabe oder Verlängerung der von Ihnen entlehnten Medien erinnert.&lt;br/&gt;Diese Erinnerungsmail ist ein freiwilliges, nicht verbindliches
+        Service der Bibliothek und enthebt die LeserInnen nicht der Pflicht zur eigenen Überwachung der Leihfristen.&lt;br/&gt;Die Bibliothek übernimmt keine Garantie für die rechtzeitige Zustellung
+        dieser E-Mails.</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-11-21Z</update_date>
+    </row>
+    <row>
+      <code>additional_info_2</code>
+      <description>Verlängerungen nicht vorgemerkter Bücher können Sie VOR Ablauf der Leihfrist via Internet selbst durchführen: &lt;a href="https://lisss.jku.at"
+        target="_blank"&gt;lisss.jku.at&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Sie können sich auch gerne telefonisch an die Leihstelle wenden: +43 732 2468 4848</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-31Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>description</code>
+      <description>Description</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>due_date</code>
+      <description>Due Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>library</code>
+      <description>Library</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>message</code>
+      <description>We would like to remind you that the following items at your disposal are due shortly:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>renew_status</code>
+      <description>Renew Status</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>short_loans_message</code>
+      <description>We would like to remind you that the following items at your disposal are due shortly:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>DepositStatusUpdateLetter</code><enabled desc="Yes">true</enabled><name>Deposit Status Update Letter</name><description>Deposit Status Update Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="Yes">true</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/DepositStatusUpdateLetter">DepositStatusUpdateLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:include href="header.xsl" /&gt;
+  &lt;xsl:include href="senderReceiver.xsl" /&gt;
+  &lt;xsl:include href="mailReason.xsl" /&gt;
+  &lt;xsl:include href="footer.xsl" /&gt;
+  &lt;xsl:include href="style.xsl" /&gt;
+  &lt;xsl:include href="recordTitle.xsl" /&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+      &lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+				&lt;/title&gt;
+
+        &lt;xsl:call-template name="generalStyle" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;xsl:attribute name="style"&gt;
+          &lt;xsl:call-template name="bodyStyleCss" /&gt;&lt;!-- style.xsl --&gt;
+        &lt;/xsl:attribute&gt;
+
+        &lt;xsl:call-template name="head" /&gt;&lt;!-- header.xsl --&gt;
+        &lt;xsl:call-template name="senderReceiver" /&gt; &lt;!-- SenderReceiver.xsl --&gt;
+
+		&lt;br /&gt;
+		&lt;xsl:call-template name="toWhomIsConcerned" /&gt; &lt;!-- mailReason.xsl --&gt;
+
+        &lt;div class="messageArea"&gt;
+          &lt;div class="messageBody"&gt;
+
+			&lt;table role='presentation' &gt;
+				&lt;xsl:variable name="depositStatus"&gt;&lt;xsl:value-of select="notification_data/deposit/status"/&gt;&lt;/xsl:variable&gt;
+				&lt;tr&gt;&lt;td&gt;@@your_deposit@@ &lt;xsl:value-of select="notification_data/deposit/title"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;@@has_been@@ &lt;xsl:value-of select="$depositStatus"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;@@deposit_id@@ &lt;xsl:value-of select="notification_data/deposit/deposit_id"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+				&lt;xsl:choose&gt;
+					&lt;xsl:when test="$depositStatus = 'APPROVED'"&gt;
+						&lt;xsl:variable name="deliveryUrl"&gt;&lt;xsl:value-of select="notification_data/deposit/delivery_url"&gt;&lt;/xsl:value-of&gt;&lt;/xsl:variable&gt;
+						&lt;tr&gt;&lt;td&gt;@@view_deposit@@ &lt;a href="{$deliveryUrl}"&gt;&lt;xsl:value-of select="notification_data/deposit/title"&gt;&lt;/xsl:value-of&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+						&lt;xsl:variable name="note"&gt;&lt;xsl:value-of select="notification_data/deposit/status_update/note"&gt;&lt;/xsl:value-of&gt;&lt;/xsl:variable&gt;
+						&lt;xsl:if test="not($note = '')"&gt;
+							&lt;tr&gt;&lt;td&gt;@@note@@ &lt;xsl:value-of select="$note"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+					&lt;/xsl:when&gt;
+					&lt;xsl:when test="$depositStatus = 'RETURNED' or $depositStatus = 'DECLINED'"&gt;
+						&lt;xsl:variable name="reason"&gt;&lt;xsl:value-of select="notification_data/deposit/status_update/reason"&gt;&lt;/xsl:value-of&gt;&lt;/xsl:variable&gt;
+						&lt;xsl:variable name="note"&gt;&lt;xsl:value-of select="notification_data/deposit/status_update/note"&gt;&lt;/xsl:value-of&gt;&lt;/xsl:variable&gt;
+						&lt;xsl:if test="not($reason = '')"&gt;
+							&lt;tr&gt;&lt;td&gt;@@reason@@ &lt;xsl:value-of select="$reason"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+						&lt;xsl:if test="not($note = '')"&gt;
+							&lt;tr&gt;&lt;td&gt;@@note@@ &lt;xsl:value-of select="$note"&gt;&lt;/xsl:value-of&gt;&lt;/td&gt;&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+					&lt;/xsl:when&gt;
+					&lt;xsl:otherwise&gt;
+					&lt;/xsl:otherwise&gt;
+				&lt;/xsl:choose&gt;
+			&lt;/table&gt;
+			&lt;br /&gt;
+
+			&lt;table role='presentation' &gt;
+				&lt;tr&gt;&lt;td&gt;@@sincerely@@&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;@@department@@&lt;/td&gt;&lt;/tr&gt;
+			&lt;/table&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- footer.xsl --&gt;
+        &lt;xsl:call-template name="lastFooter" /&gt;
+        &lt;xsl:call-template name="myAccount" /&gt;
+		&lt;xsl:call-template name="contactUs" /&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</xsl></letter>

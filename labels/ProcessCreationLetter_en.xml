@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>ProcessCreationLetter</name>
+  <description>The process has been created and scheduled</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>Your.Department@organization.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Circulation Department</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Process Creation</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>process_created</code>
+      <description>The process has been created and scheduled</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>process creation engine</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

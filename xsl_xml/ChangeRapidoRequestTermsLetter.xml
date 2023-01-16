@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>ChangeRapidoRequestTermsLetter</code><enabled desc="Yes">true</enabled><name>Change Rapido Request Terms Letter</name><description>Change Rapido Request Terms Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="Yes">true</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/ChangeRapidoRequestTermsLetter">ChangeRapidoRequestTermsLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+&lt;xsl:include href="header.xsl" /&gt;
+&lt;xsl:include href="senderReceiver.xsl" /&gt;
+&lt;xsl:include href="mailReason.xsl" /&gt;
+&lt;xsl:include href="footer.xsl" /&gt;
+&lt;xsl:include href="style.xsl" /&gt;
+&lt;xsl:include href="recordTitle.xsl" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+			&lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+				&lt;/title&gt;
+
+				&lt;xsl:call-template name="generalStyle" /&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;xsl:attribute name="style"&gt;
+					&lt;xsl:call-template name="bodyStyleCss" /&gt;
+					&lt;!-- style.xsl --&gt;
+				&lt;/xsl:attribute&gt;
+				&lt;xsl:call-template name="head" /&gt;
+				&lt;!-- header.xsl --&gt;
+
+			    &lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+							&lt;h3&gt;@@header@@&lt;/h3&gt;
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+
+				&lt;div class="messageArea"&gt;
+					&lt;div class="messageBody"&gt;
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									@@start@@
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+                        &lt;br/&gt;
+                        
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;xsl:attribute name="style"&gt;
+								&lt;xsl:call-template name="listStyleCss"/&gt;
+								&lt;!-- style.xsl --&gt;
+							&lt;/xsl:attribute&gt;
+							&lt;xsl:if test="notification_data/request/external_request_id !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;strong&gt; @@requestId@@: &lt;/strong&gt;
+										&lt;xsl:value-of select="notification_data/request/external_request_id"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/request/title !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;strong&gt; @@title@@: &lt;/strong&gt;
+										&lt;xsl:value-of select="notification_data/request/title"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/request/create_date_str !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;strong&gt; @@requestDate@@: &lt;/strong&gt;
+										&lt;xsl:value-of select="notification_data/request/create_date_str"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+						
+						&lt;br/&gt;
+												
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+								&lt;xsl:if test="notification_data/old_terms_exist='true'"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											&lt;xsl:if test="notification_data/old_delivey_time != '' and notification_data/old_loan_period != ''"&gt;
+												@@from@@
+												&lt;xsl:value-of select="notification_data/old_delivey_time" /&gt;
+												@@keepFor@@
+												&lt;xsl:value-of select="notification_data/old_loan_period" /&gt;
+												@@days@@
+											&lt;/xsl:if&gt;	
+											&lt;xsl:if test="notification_data/old_delivey_time = ''"&gt;
+												@@fromRota@@
+												@@deliveryNotExist@@
+												&lt;xsl:value-of select="notification_data/old_loan_period" /&gt;
+												@@days@@
+											&lt;/xsl:if&gt;	
+											&lt;xsl:if test="notification_data/old_loan_period = ''"&gt;
+												@@from@@
+												&lt;xsl:value-of select="notification_data/old_delivey_time" /&gt;
+												@@loanPeriodNotExist@@
+											&lt;/xsl:if&gt;				
+											&lt;xsl:if test="notification_data/old_cost !=''"&gt;
+												@@costToPatron@@
+												&lt;xsl:value-of select="notification_data/old_cost" /&gt;
+												&lt;xsl:value-of select="' '" /&gt;
+												&lt;xsl:value-of select="notification_data/currency" /&gt;
+											&lt;/xsl:if&gt;
+											&lt;xsl:if test="notification_data/old_cost ='' and notification_data/new_cost !=''"&gt;
+												@@costIsUnkown@@
+											&lt;/xsl:if&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+								&lt;xsl:if test="notification_data/old_terms_exist='false'"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											@@unknownTerms@@
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+								&lt;xsl:if test="notification_data/new_terms_exist='true'"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											&lt;xsl:if test="notification_data/ngrs_request/delivery_time != '0' and notification_data/ngrs_request/loan_period != '0'"&gt;
+												@@to@@
+												&lt;xsl:value-of select="notification_data/ngrs_request/delivery_time" /&gt;
+												@@keepFor@@
+												&lt;xsl:value-of select="notification_data/ngrs_request/loan_period" /&gt;
+												@@days@@
+											&lt;/xsl:if&gt;	
+											&lt;xsl:if test="notification_data/ngrs_request/delivery_time = '0'"&gt;
+												@@toRota@@
+												@@deliveryNotExist@@
+												&lt;xsl:value-of select="notification_data/ngrs_request/loan_period" /&gt;
+												@@days@@
+											&lt;/xsl:if&gt;	
+											&lt;xsl:if test="notification_data/ngrs_request/loan_period = '0'"&gt;
+												@@to@@
+												&lt;xsl:value-of select="notification_data/ngrs_request/delivery_time" /&gt;
+												@@loanPeriodNotExist@@
+											&lt;/xsl:if&gt;		
+											&lt;xsl:if test="notification_data/new_cost !=''"&gt;
+												@@costToPatron@@
+												&lt;xsl:value-of select="notification_data/new_cost" /&gt;
+												&lt;xsl:value-of select="' '" /&gt;
+												&lt;xsl:value-of select="notification_data/currency" /&gt;
+											&lt;/xsl:if&gt;
+											&lt;xsl:if test="notification_data/new_cost ='' and notification_data/old_cost !=''"&gt;
+												@@costIsUnkown@@
+											&lt;/xsl:if&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+								&lt;xsl:if test="notification_data/new_terms_exist='false'"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											@@toUnknownTerms@@
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+								&lt;xsl:if test="notification_data/default_pickup_location != '' and notification_data/preferred_library != '' and notification_data/preferred_inst != ''"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											&lt;strong&gt; @@pickupLocationChanged@@ &lt;/strong&gt;
+											&lt;strong&gt;&lt;xsl:value-of select="notification_data/preferred_inst"/&gt;-&lt;/strong&gt;
+											&lt;strong&gt;&lt;xsl:value-of select="notification_data/preferred_library"/&gt;&lt;/strong&gt;
+											&lt;strong&gt; @@defaultPickupLocation@@ &lt;/strong&gt;
+											&lt;strong&gt;&lt;xsl:value-of select="notification_data/default_pickup_location"/&gt;&lt;/strong&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/xsl:if&gt;
+						&lt;/table&gt;
+						&lt;br/&gt;
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;xsl:if test="notification_data/new_terms_exist='true'"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										@@termsChange@@
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/new_terms_exist='false'"&gt;
+									&lt;tr&gt;
+										&lt;td&gt;
+											@@prevTermsNoValid@@
+											&lt;br/&gt;
+											@@weWillUpdate@@
+										&lt;/td&gt;
+									&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+						&lt;br/&gt;
+						
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;xsl:if test="notification_data/new_pickup_date !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										@@newPickupDate@@:
+										&lt;xsl:value-of select="notification_data/new_pickup_date"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/new_due_date !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										@@newDueDate@@:
+										&lt;xsl:value-of select="notification_data/new_due_date"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+						
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;xsl:if test="notification_data/new_delivery_date!=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										@@newDeliveryDate@@:
+										&lt;xsl:value-of select="notification_data/new_delivery_date"/&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+						
+						&lt;br/&gt;
+						
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									@@end@@
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+						&lt;br/&gt;&lt;br/&gt;
+
+						&lt;table role='presentation' &gt;
+							&lt;tr&gt;
+								&lt;td&gt;@@signature@@&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;xsl:value-of select="notification_data/organization_unit/name" /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/line1 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/line1" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/line2 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/line2" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/line3 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/line3" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/line4 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/line4" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/line5 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/line5" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/city !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/city" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/organization_unit/address/country !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/organization_unit/address/country" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;xsl:call-template name="lastFooter" /&gt;
+				&lt;!-- footer.xsl --&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+
+</xsl></letter>

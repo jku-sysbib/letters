@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+  <code>InvoicePaymentLetter</code>
+  <enabled desc="Yes">true</enabled>
+  <name>Invoice Payment Letter</name>
+  <description>Invoice Payment Letter</description>
+  <channel>SUBMISSION</channel>
+  <retention_period></retention_period>
+  <customized>false</customized>
+  <patron_facing desc="No">false</patron_facing>
+  <updated_by />
+  <labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/InvoicePaymentLetter">InvoicePaymentLetter</labels>
+  <xsl></xsl>
+</letter>

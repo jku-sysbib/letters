@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>ReportAproblemLetter</name>
+  <description>Report a Problem Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>addressFrom</code>
+      <description>Discovery@exlibrisgroup.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>emailSubject</code>
+      <description>Neues Feedback von einem Primo-Benutzer erhalten - {category_name}</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

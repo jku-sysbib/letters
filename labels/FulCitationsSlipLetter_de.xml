@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulCitationsSlipLetter</name>
+  <description>Ful Citations Slip Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Ihre.Abteilung@organisation.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Literaturlisten-Bericht</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>message</code>
+      <description>Der Literaturlisten-Bericht ist angehängt</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Seminar Literaturlisten-Bericht</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulCitationSlipLetter</name>
+  <description>Ful Citation Slip Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Your.Department@organization.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>course_code</code>
+      <description>Course Code</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>course_department</code>
+      <description>Course Department</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>course_name</code>
+      <description>Course Name</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>item_barcode</code>
+      <description>Item Barcode</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Reading List Citation Slip Letter</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>library</code>
+      <description>Library</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>location</code>
+      <description>Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>reading_list_assignee</code>
+      <description>Reading List Assignee</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>reading_list_code</code>
+      <description>Reading List Code</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>reading_list_name</code>
+      <description>Reading List Name</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_location_for_item</code>
+      <description>Shelving Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Reading List Citation Slip</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

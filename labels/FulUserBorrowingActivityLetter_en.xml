@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulUserBorrowingActivityLetter</name>
+  <description>Patron Circulation Summary</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>loans</code>
+      <description>Loans</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>overdue_loans</code>
+      <description>Overdue Loans</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Patron Circulation Summary</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>subject_with_overdue</code>
+      <description>Patron Circulation Summary - Overdue Items Exist</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>please_pay_message</code>
+      <description>Please settle your account at the earliest opportunity.</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-12Z</update_date>
+    </row>
+    <row>
+      <code>debt_message</code>
+      <description>We would like to remind you that you have a debt:</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-12Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Borrowing Activity Letter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>reminder_message</code>
+      <description>We would like to remind you that you have the following items at your disposal:</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Circulation Department</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>location</code>
+      <description>Location</description>
+      <enabled>true</enabled>
+      <updated_by>AK103603</updated_by>
+      <update_date>2018-01-18Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-leihstelle@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-12Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>description</code>
+      <description>Description</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>due_date</code>
+      <description>Due Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>fine</code>
+      <description>Fine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>library</code>
+      <description>Library</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>total</code>
+      <description>Total:</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

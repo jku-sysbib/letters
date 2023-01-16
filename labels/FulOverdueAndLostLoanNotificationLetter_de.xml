@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulOverdueAndLostLoanNotificationLetter</name>
+  <description>Ful Overdue And Lost Loan Notification Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>inform_you_item_below_type2</code>
+      <description>&lt;b&gt;Mahnstufe 2&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Wir möchten Sie erneut darauf hinweisen, dass die Rückstellung der im folgenden angeführten Medien noch nicht erfolgt ist. Bitte
+        erledigen Sie die Rückgabe so rasch wie möglich.</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>inform_you_item_below_type3</code>
+      <description>&lt;b&gt;Mahnstufe 3&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Trotz wiederholter Benachrichtigungen haben Sie die im folgenden angeführten Medien noch nicht retourniert. Als letzten Termin
+        für die Rückstellung legen wir hiermit den .................................................... fest. Bitte erledigen Sie die Rückgabe bis zum angegebenen Termin. Sollte die Rückstellung nicht
+        erfolgen, wird die Angelegenheit – entsprechend der in &amp;#167; 6 unserer Benützungsordnung dafür vorgesehenen Vorgehensweise – weiterverfolgt.</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>additional_info_1</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-12Z</update_date>
+    </row>
+    <row>
+      <code>inform_you_item_below_type4</code>
+      <description>&lt;b&gt;Mahnstufe 4&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Bei folgenden Medien ist die im 3. Rückruf gesetzte Nachfrist ergebnislos verstrichen:</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>charged_with_fines_fees</code>
+      <description>Für die verspätete Rückstellung müssen wir gemäß Benützungsordnung eine Gebühr einheben, diese beträgt pro Mahnung 2 Euro und zusätzlich wird ab Überschreitung der Entlehnfrist pro
+        Werk und Tag eine Überschreitungsgebühr von 20 Cent verrechnet.</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-12Z</update_date>
+    </row>
+    <row>
+      <code>inform_you_item_below_type1</code>
+      <description>&lt;b&gt;Mahnstufe 1&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Wir möchten Sie freundlich darauf hinweisen, dass Sie mit der Rückgabe von Medien in Verzug sind. Genaues entnehmen Sie bitte der
+        folgenden Aufstellung.</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-14Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-leihstelle@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-02-01Z</update_date>
+    </row>
+    <row>
+      <code>department</code>
+      <description>Johannes Kepler Universität, Universitätsbibliothek</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-12Z</update_date>
+    </row>
+    <row>
+      <code>loan_date</code>
+      <description>Entlehndatum</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>lost_item</code>
+      <description>Titel</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>leihstelle.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>fee_amount</code>
+      <description>Säumnisgebühr</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Mahnung</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Mahnung</description>
+      <enabled>true</enabled>
+      <updated_by>admin</updated_by>
+      <update_date>2017-12-07Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_1_type1</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_1_type2</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_1_type3</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_1_type4</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_1_type5</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2_type1</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2_type2</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2_type3</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2_type4</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_info_2_type5</code>
+      <description>EMPTY_STRING</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>barcode</code>
+      <description>Strichcode</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>borrowed_by_you</code>
+      <description>die von Ihnen entliehen wurden,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>by</code>
+      <description>Verfasser</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Signatur</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>charged_with_fines_fees_type1</code>
+      <description>Ihnen werden folgende Gebühren berechnet:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>charged_with_fines_fees_type2</code>
+      <description>Ihnen werden folgende Gebühren berechnet:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>charged_with_fines_fees_type3</code>
+      <description>Ihnen werden folgende Gebühren berechnet:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>charged_with_fines_fees_type4</code>
+      <description>Ihnen werden folgende Gebühren berechnet:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>charged_with_fines_fees_type5</code>
+      <description>Ihnen werden folgende Gebühren berechnet:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>dear</code>
+      <description>Sehr geehrte Damen und Herren,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost_type1</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost_type2</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost_type3</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost_type4</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>decalred_as_lost_type5</code>
+      <description>zurückgegeben werden müssen, sonst werden sie als verloren deklariert.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>description</code>
+      <description>Beschreibung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>due_date</code>
+      <description>Fälligkeitsdatum</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>fee_type</code>
+      <description>Gebührenart</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>inform_you_item_below</code>
+      <description>Wir möchten Sie informieren, dass die Exemplare mit den untenstehenden Details,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>inform_you_item_below_type5</code>
+      <description>Wir möchten Sie informieren, dass die Exemplare mit den untenstehenden Details,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>library</code>
+      <description>Bibliothek</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Notiz</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>notification_profiles</code>
+      <description>Profile</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>notification_type</code>
+      <description>Benachrichtigungstyp</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>overdue_notification_fee</code>
+      <description>Benachrichtigungsgebühr wegen Überfälligkeit:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>sincerely</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

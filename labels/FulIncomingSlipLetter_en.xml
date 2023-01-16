@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>FulIncomingSlipLetter</name>
+  <description>Ful Incoming Slip Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>additional_person_name</code>
+      <description>Additional Person Name</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Your.Department@organization.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>assignee</code>
+      <description>Assignee</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author_initials</code>
+      <description>Author Initials</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>borrower_reference</code>
+      <description>Borrower Reference</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chapter</code>
+      <description>Chapter</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chapter_author</code>
+      <description>Chapter Author</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>chapter_title</code>
+      <description>Chapter Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>date_needed_by</code>
+      <description>Date Needed By</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>doi</code>
+      <description>DOI</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>edition</code>
+      <description>Edition</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>editor</code>
+      <description>Editor</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>end_page</code>
+      <description>End Page</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>external_identifier</code>
+      <description>External Identifier</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>format</code>
+      <description>Format</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>isbn</code>
+      <description>ISBN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issn</code>
+      <description>ISSN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>issue</code>
+      <description>Issue</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>item_barcode</code>
+      <description>Item Barcode</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>journal_title</code>
+      <description>Journal Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>lcc_number</code>
+      <description>LCCN</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Resource Sharing Lending Slip Letter</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>level_of_service</code>
+      <description>Level of Service</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>library</code>
+      <description>Library</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>location</code>
+      <description>Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>my_id</code>
+      <description>My ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>oclc_number</code>
+      <description>OCLC Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pages</code>
+      <description>Pages</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>part</code>
+      <description>Part</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>place_of_publication</code>
+      <description>Place of Publication</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pmid</code>
+      <description>PMID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>publication_date</code>
+      <description>Publication Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>publisher</code>
+      <description>Publisher</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request_note</code>
+      <description>Request Note</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requester_email</code>
+      <description>Requester Email</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>resource_sharing_request_id</code>
+      <description>Resource sharing internal request id</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>series_title_number</code>
+      <description>Series Title Number</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>shelving_location_for_item</code>
+      <description>Shelving Location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>source</code>
+      <description>Source</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>start_page</code>
+      <description>Start Page</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Resource Sharing Lending Slip</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>supplied_to</code>
+      <description>Supplied To</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>volume</code>
+      <description>Volume</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>year</code>
+      <description>Year</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

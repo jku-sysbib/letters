@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+  <code>ILL_EMAIL_TO_USER</code>
+  <enabled desc="Yes">true</enabled>
+  <name>ILL EMAIL TO USER</name>
+  <description>ILL EMAIL TO USER</description>
+  <channel>EMAIL</channel>
+  <retention_period></retention_period>
+  <customized>false</customized>
+  <patron_facing desc="No">false</patron_facing>
+  <updated_by />
+  <labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/ILL_EMAIL_TO_USER">ILL_EMAIL_TO_USER</labels>
+  <xsl></xsl>
+</letter>

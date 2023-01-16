@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+  <code>ProcessCreationLetter</code>
+  <enabled desc="Yes">true</enabled>
+  <name>Process Creation</name>
+  <description>The process has been created and scheduled</description>
+  <channel>EMAIL</channel>
+  <retention_period></retention_period>
+  <customized desc="No">false</customized>
+  <patron_facing desc="No">false</patron_facing>
+  <updated_by />
+  <labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/ProcessCreationLetter">ProcessCreationLetter</labels>
+  <xsl></xsl>
+</letter>

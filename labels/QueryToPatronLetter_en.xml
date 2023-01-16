@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>QueryToPatronLetter</name>
+  <description>Query To Patron Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Type_1_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_1_header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_1_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_1_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_1_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_1_Sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_query_line_1</code>
+      <description>The book/journal is only available abroad and therefore exceeds the maximum fee you specified. Should we still order the work or cancel the order?</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_2_Sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_query_line_1</code>
+      <description>You have entered a cost limit that is too low, a book in Germany costs € 2 / copies € 0.20 per page, abroad the costs are € 10 per book / € 0.30 per copy. Please give us a new upper
+        cost limit.</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_3_Sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_query_line_1</code>
+      <description>The desired edition is unfortunately out of stock or not available, should we order a different edition?</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_4_Sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_query_line_1</code>
+      <description>The desired title is unfortunately borrowed from all libraries, should we reserve it for you?</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_5_Sincerely</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_6_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Type_6_query_line_1</code>
+      <description>Unfortunately, we could not find anything with this information, we ask you to check or supplement your information.</description>
+      <enabled>true</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_6_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_6_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_7_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>true</enabled>
+      <updated_by>exl_api</updated_by>
+      <update_date>2022-12-06Z</update_date>
+    </row>
+    <row>
+      <code>Type_7_query_line_1</code>
+      <description>The loan period for the interlibrary loan book you have borrowed has expired. We ask that you return it as soon as possible.</description>
+      <enabled>true</enabled>
+      <updated_by>exl_api</updated_by>
+      <update_date>2022-12-06Z</update_date>
+    </row>
+    <row>
+      <code>Type_7_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_7_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_8_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_8_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_8_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_8_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_9_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_9_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_9_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_9_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_10_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_10_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_10_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_10_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_11_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_11_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_11_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_11_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_12_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_12_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_12_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_12_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_13_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_13_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_13_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_13_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_14_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_14_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_14_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_14_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_15_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_15_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_15_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_15_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_16_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_16_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_16_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_16_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_17_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_17_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_17_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_17_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_18_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_18_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_18_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_18_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_19_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_19_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_19_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_19_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_20_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_20_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_20_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_20_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_21_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_21_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_21_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_21_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_22_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_22_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_22_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_22_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_23_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_23_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_23_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_23_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_24_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_24_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_24_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_24_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_25_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_25_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_25_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_25_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_26_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_26_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_26_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_26_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_27_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_27_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_27_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_27_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_28_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_28_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_28_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_28_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_29_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_29_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_29_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_29_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_30_subject</code>
+      <description>Regarding your request %reqId%</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_30_query_line_1</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_30_query_line_2</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>Type_30_query_line_3</code>
+      <description>[Please enter your query here]</description>
+      <enabled>false</enabled>
+      <updated_by>AK103953</updated_by>
+      <update_date>2021-09-14Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>fernleihe.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Requested Material</description>
+      <enabled>true</enabled>
+      <updated_by>exl_api</updated_by>
+      <update_date>2023-01-16Z</update_date>
+    </row>
+    <row>
+      <code>additional_person_name</code>
+      <description>Additional Person Name</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>request_id</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>format</code>
+      <description>Format</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>article_or_chapter_title</code>
+      <description>Article\\Chapter Title</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>request_note</code>
+      <description>Request Note</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Author</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>author_initials</code>
+      <description>Author Initials</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>call_number</code>
+      <description>Call Number</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>chapter</code>
+      <description>Chapter</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>date</code>
+      <description>Date</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>doi</code>
+      <description>DOI</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>edition</code>
+      <description>Edition</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>end_page</code>
+      <description>End Page</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>requested</code>
+      <description>The following is requested from your library</description>
+      <enabled>true</enabled>
+      <updated_by>exl_api</updated_by>
+      <update_date>2023-01-16Z</update_date>
+    </row>
+    <row>
+      <code>isbn</code>
+      <description>ISBN</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>issn</code>
+      <description>ISSN</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>issue</code>
+      <description>Issue</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>journal_title</code>
+      <description>Journal Title</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>query_to_patron</code>
+      <description>Query to patron</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>query_note</code>
+      <description>Note</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Note</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>pages</code>
+      <description>Pages</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>place_of_publication</code>
+      <description>Place of Publication</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>pmid</code>
+      <description>PMID</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>publication_date</code>
+      <description>Publication Date</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>publisher</code>
+      <description>Publisher</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>request_format</code>
+      <description>Request Format</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>series_title_number</code>
+      <description>Series Title Number</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>source</code>
+      <description>Source</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>start_page</code>
+      <description>Start Page</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>volume</code>
+      <description>Volume</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>year</code>
+      <description>Year</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>part</code>
+      <description>Part</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>maximum_fee</code>
+      <description>Maximum Fee</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-fernleihe@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2018-03-13Z</update_date>
+    </row>
+  </rows>
+</code_table>

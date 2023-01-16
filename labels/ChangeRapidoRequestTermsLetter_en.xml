@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>ChangeRapidoRequestTermsLetter</name>
+  <description>Change Rapido Request Terms Letter</description>
+  <sub_system desc="Letters">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="English">en</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>None</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>Your.Department@organization.com</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>costIsUnkown</code>
+      <description>, Cost is unknown</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>costToPatron</code>
+      <description>, Cost</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>days</code>
+      <description>days</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>defaultPickupLocation</code>
+      <description>to your default pickup location</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>deliveryNotExist</code>
+      <description>Delivery days is not yet determined, Keep for</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>end</code>
+      <description>Please contact the library with any question.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>from</code>
+      <description>From: Deliver in</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>fromRota</code>
+      <description>From:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>header</code>
+      <description>Dear Sir/Madam,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>hours</code>
+      <description>hours</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>keepFor</code>
+      <description>days, Keep for</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Change in Request Terms Notification</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>loanPeriodNotExist</code>
+      <description>days, Loan period is not yet determined</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>newDeliveryDate</code>
+      <description>New delivery date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>newDueDate</code>
+      <description>New estimated due date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>newPickupDate</code>
+      <description>New estimated pick up date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pickupLocationChanged</code>
+      <description>Unfortunately we can't supply the requested item from our network, therefore, the pickup location of the resource changed from</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>policyChanged</code>
+      <description>The policy of the request has changed</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>prevTermsNoValid</code>
+      <description>The previous request terms are no longer valid because the lender was unable to fulfill the request.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestDate</code>
+      <description>Request Date</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestId</code>
+      <description>Request ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>signature</code>
+      <description>Sincerely</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>start</code>
+      <description>We would like to notify you of a change to the following resource sharing request:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Change in Request Terms Notification</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>termsChange</code>
+      <description>The terms of the request have changed due to a change in the supplier.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Title</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>to</code>
+      <description>To: Deliver in</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>toRota</code>
+      <description>To:</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>toUnknownTerms</code>
+      <description>To: No known terms</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>unknownTerms</code>
+      <description>From: No known terms</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>weWillUpdate</code>
+      <description>We will update with more information as it arrives.</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

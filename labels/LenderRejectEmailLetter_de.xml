@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code_table>
+  <name>LenderRejectEmailLetter</name>
+  <description>Lender Reject Email Letter</description>
+  <sub_system desc="Briefe">LETTER</sub_system>
+  <patron_facing>true</patron_facing>
+  <language desc="Deutsch">de</language>
+  <scope>
+    <institution_id desc="Johannes Kepler Universität Linz">43ACC_UBL</institution_id>
+    <library_id desc=""></library_id>
+  </scope>
+  <rows>
+    <row>
+      <code>Bcc</code>
+      <description>alma-test-fernleihe@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2019-04-09Z</update_date>
+    </row>
+    <row>
+      <code>addressFrom</code>
+      <description>fernleihe.bibliothek@jku.at</description>
+      <enabled>true</enabled>
+      <updated_by>AK113081</updated_by>
+      <update_date>2019-04-09Z</update_date>
+    </row>
+    <row>
+      <code>Cc</code>
+      <description>Keine</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>author</code>
+      <description>Verfasser</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>header</code>
+      <description>Sehr geehrte Damen und Herren,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>letterName</code>
+      <description>Gebender Fernleihpartner - Ablehnung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>note</code>
+      <description>Notiz</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>reason</code>
+      <description>Grund für Ablehnung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>request</code>
+      <description>Wir bedauern, Ihnen mitteilen zu müssen, dass wir Ihre Fernleihbestellung nicht erfüllen können.</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestDate</code>
+      <description>Bestelldatum</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>requestId</code>
+      <description>Bestell-ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>signature</code>
+      <description>Mit freundlichen Grüßen,</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>subject</code>
+      <description>Gebender Fernleihpartner - Ablehnung</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>title</code>
+      <description>Titel</description>
+      <enabled>true</enabled>
+    </row>
+  </rows>
+</code_table>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>FulCitationSlipLetter</code><enabled desc="Yes">true</enabled><name>Ful Citation Slip Letter</name><description>Ful Citation Slip Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="No">false</patron_facing><updated_by/><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/FulCitationSlipLetter">FulCitationSlipLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+&lt;xsl:variable name="counter" select="0"/&gt;
+
+
+&lt;xsl:include href="header.xsl" /&gt;
+&lt;xsl:include href="senderReceiver.xsl" /&gt;
+&lt;xsl:include href="mailReason.xsl" /&gt;
+&lt;xsl:include href="footer.xsl" /&gt;
+&lt;xsl:include href="style.xsl" /&gt;
+&lt;xsl:include href="recordTitle.xsl" /&gt;
+&lt;xsl:template match="/"&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+		&lt;xsl:call-template name="generalStyle" /&gt;
+		&lt;/head&gt;
+
+			&lt;body&gt;
+			&lt;xsl:attribute name="style"&gt;
+				&lt;xsl:call-template name="bodyStyleCss" /&gt; &lt;!-- style.xsl --&gt;
+			&lt;/xsl:attribute&gt;
+
+				&lt;xsl:call-template name="head" /&gt; &lt;!-- header.xsl --&gt;
+
+
+
+			&lt;div class="messageArea"&gt;
+				&lt;div class="messageBody"&gt;
+					 &lt;table cellspacing="0" cellpadding="5" border="0"&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@course_code@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/course/code"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@course_name@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/course/name"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@course_department@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/department"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@reading_list_code@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/reading_list/code"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;b&gt;@@reading_list_name@@: &lt;/b&gt;
+								&lt;xsl:value-of select="notification_data/reading_list/name"/&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+
+						&lt;xsl:if  test="notification_data/reading_list/assignee != ''" &gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@reading_list_assignee@@: &lt;/b&gt;
+									&lt;xsl:value-of select="notification_data/reading_list/assignee"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/xsl:if&gt;
+
+						&lt;xsl:for-each select="notification_data/items/physical_item_display_for_printing"&gt;
+							&lt;br&gt;&lt;/br&gt;
+
+							&lt;tr&gt;
+							  &lt;td&gt;&lt;b&gt;@@item_barcode@@: &lt;/b&gt;&lt;img src="cid:{concat(concat('Barcode',position()),'.png')}" alt="{concat('Barcode',position())}" /&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;&lt;xsl:value-of select="title"/&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;b&gt;@@library@@: &lt;/b&gt;
+									&lt;xsl:value-of select="library_name"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;&lt;b&gt;@@location@@: &lt;/b&gt;&lt;xsl:value-of select="location_name"/&gt;&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;xsl:if  test="call_number" &gt;
+								&lt;tr&gt;
+									&lt;td&gt;&lt;b&gt;@@call_number@@: &lt;/b&gt;&lt;xsl:value-of select="call_number"/&gt;&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+
+							&lt;xsl:if  test="shelving_location/string" &gt;
+								&lt;tr&gt;
+									&lt;td&gt;&lt;b&gt;@@shelving_location_for_item@@: &lt;/b&gt;
+									 &lt;xsl:for-each select="shelving_location/string"&gt;
+										&lt;xsl:value-of select="."/&gt;
+									 &amp;#160;
+									 &lt;/xsl:for-each&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+						&lt;/xsl:for-each&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+
+
+
+	&lt;xsl:call-template name="lastFooter" /&gt; &lt;!-- footer.xsl --&gt;
+
+
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</xsl></letter>

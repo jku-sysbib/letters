@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><letter><code>BorrowerReceiveEmailLetter</code><enabled desc="Yes">true</enabled><name>Borrower Receive Email Letter</name><description>Borrower Receive Email Letter</description><channel>EMAIL</channel><retention_period></retention_period><customized desc="No">false</customized><patron_facing desc="Yes">true</patron_facing><updated_by>AK115488</updated_by><update_date>2018-01-08Z</update_date><labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/BorrowerReceiveEmailLetter">BorrowerReceiveEmailLetter</labels><xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+	&lt;xsl:include href="header.xsl" /&gt;
+	&lt;xsl:include href="senderReceiver.xsl" /&gt;
+	&lt;xsl:include href="mailReason.xsl" /&gt;
+	&lt;xsl:include href="footer.xsl" /&gt;
+	&lt;xsl:include href="style.xsl" /&gt;
+	&lt;xsl:include href="recordTitle.xsl" /&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;html&gt;
+			&lt;xsl:if test="notification_data/languages/string"&gt;
+				&lt;xsl:attribute name="lang"&gt;
+					&lt;xsl:value-of select="notification_data/languages/string"/&gt;
+				&lt;/xsl:attribute&gt;
+			&lt;/xsl:if&gt;
+
+			&lt;head&gt;
+				&lt;title&gt;
+					&lt;xsl:value-of select="notification_data/general_data/subject"/&gt;
+				&lt;/title&gt;
+
+				&lt;xsl:call-template name="generalStyle" /&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;xsl:attribute name="style"&gt;
+					&lt;xsl:call-template name="bodyStyleCss" /&gt;
+					&lt;!-- style.xsl --&gt;
+				&lt;/xsl:attribute&gt;
+				&lt;xsl:call-template name="head" /&gt;
+				&lt;!-- header.xsl --&gt;
+
+			    &lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
+
+							&lt;h3&gt;@@header@@&lt;/h3&gt;
+
+						&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/table&gt;
+
+				&lt;div class="messageArea"&gt;
+					&lt;div class="messageBody"&gt;
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;strong&gt;@@request@@ &lt;xsl:value-of select="notification_data/item_arrival_date"/&gt;&lt;/strong&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+						&lt;/table&gt;
+
+                        &lt;br/&gt;
+						&lt;table role='presentation'  cellspacing="0" cellpadding="5" border="0"&gt;
+							&lt;xsl:attribute name="style"&gt;
+								&lt;xsl:call-template name="listStyleCss"/&gt;
+								&lt;!-- style.xsl --&gt;
+							&lt;/xsl:attribute&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;strong&gt; @@requestId@@: &lt;/strong&gt;
+									&lt;xsl:value-of select="notification_data/request/external_request_id"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;strong&gt; @@title@@: &lt;/strong&gt;
+									&lt;xsl:value-of select="notification_data/request/display/title"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;strong&gt; @@author@@: &lt;/strong&gt;
+									&lt;xsl:value-of select="notification_data/request/display/author"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;strong&gt; @@requestDate@@: &lt;/strong&gt;
+									&lt;xsl:value-of select="notification_data/request/create_date_str"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;br/&gt;
+									&lt;strong&gt; @@note@@: &lt;/strong&gt;
+									&lt;xsl:value-of select="notification_data/note_to_partner"/&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/table&gt;
+
+						&lt;br/&gt;&lt;br/&gt;
+
+						&lt;table role='presentation' &gt;
+							&lt;tr&gt;
+								&lt;td&gt;@@signature@@&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;xsl:value-of select="notification_data/library/name" /&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;xsl:if test="notification_data/library/address/line1 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/line1" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/line2 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/line2" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/line3 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/line3" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/line4 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/line4" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/line5 !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/line5" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/city !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/city" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+							&lt;/xsl:if&gt;
+							&lt;xsl:if test="notification_data/library/address/country !=''"&gt;
+								&lt;tr&gt;
+									&lt;td&gt;
+										&lt;xsl:value-of select="notification_data/library/address/country" /&gt;
+									&lt;/td&gt;
+								&lt;/tr&gt;
+
+							&lt;/xsl:if&gt;
+						&lt;/table&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;xsl:call-template name="lastFooter" /&gt;
+				&lt;!-- footer.xsl --&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+
+</xsl></letter>
