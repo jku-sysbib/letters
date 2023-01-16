@@ -12,6 +12,8 @@
 * npm init -y
 * npm install --save-dev xslt3
 * create directory xml and download xml for letter here
+* Download your own letters to xsl_xml\
+under /diverses is an excel file for generating cURL commands for letter and labels
 
 # usage
 * edit letter (xsl_xml/...)
