@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>smsRecordTitle.xsl</code>
+	<name>smsRecordTitle.xsl</name>
+	<description>sms record Title xsl</description>
+	<customized desc="No">false</customized>
+	<updated_by />
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/smsRecordTitle.xsl">smsRecordTitle.xsl</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+		&lt;xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+
+		&lt;xsl:template name="recordTitle"&gt;
+		&lt;xsl:value-of select="notification_data/phys_item_display/title"/&gt; @@by@@ &lt;xsl:value-of select="notification_data/phys_item_display/author"/&gt; ( &lt;xsl:value-of
+		select="notification_data/phys_item_display/material_type"/&gt; )
+
+		&lt;xsl:value-of select="notification_data/phys_item_display/publisher"/&gt; &lt;xsl:value-of select="notification_data/phys_item_display/publication_place"/&gt; &lt;xsl:value-of
+		select="notification_data/phys_item_display/publication_date "/&gt;
+		)
+
+		&lt;xsl:if test="notification_data/phys_item_display/volumeIssue"&gt;
+		@@description@@ &lt;xsl:value-of select="notification_data/phys_item_display/volumeIssue"/&gt; &lt;xsl:text disable-output-escaping="yes"&gt;&amp;lt;/tr&amp;gt;&lt;/xsl:text&gt;
+		&lt;/xsl:if&gt;
+
+		&lt;/xsl:template&gt;
+
+		&lt;/xsl:stylesheet&gt;</xsl>
+</letter>

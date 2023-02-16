@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>mailReason.xsl</code>
+	<name>mailReason.xsl</name>
+	<description>Mail Reason Letter XSL</description>
+	<customized desc="Yes">true</customized>
+	<updated_by>admin</updated_by>
+	<update_date>2017-12-06Z</update_date>
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/mailReason.xsl">mailReason.xsl</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;&#13;
+		&lt;!-- 2017-11-20: WA: inserted xsl-choose to be able to also handle letters that don't contain receivers/receiver/user/last_name --&gt;&#13;
+		&lt;!-- 2017-11-20: WA: added first_name to last_name --&gt;&#13;
+		&#13;
+		&lt;xsl:stylesheet version="1.0"&#13;
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;&#13;
+		&#13;
+		&#13;
+		&#13;
+		&lt;xsl:template name="toWhomIsConcerned"&gt;&#13;
+		&lt;table cellspacing="0" cellpadding="5" border="0"&gt;&#13;
+		&lt;tr&gt;&#13;
+		&lt;td&gt;&#13;
+		&lt;xsl:for-each select="notification_data"&gt;&#13;
+		&lt;xsl:choose&gt;&#13;
+		&lt;xsl:when test="receivers/receiver/user"&gt;&#13;
+		&lt;h3&gt;@@dear@@ &amp;#160;&lt;xsl:value-of select="receivers/receiver/user/first_name"/&gt;&amp;#160;&lt;xsl:value-of select="receivers/receiver/user/last_name"/&gt;&lt;/h3&gt;&#13;
+		&lt;/xsl:when&gt;&#13;
+		&lt;xsl:when test="user_for_printing/name"&gt;&#13;
+		&lt;h3&gt;@@dear@@ &amp;#160;&lt;xsl:value-of select="user_for_printing/name"/&gt;&lt;/h3&gt;&#13;
+		&lt;/xsl:when&gt;&#13;
+		&lt;xsl:otherwise&gt;&#13;
+		&lt;/xsl:otherwise&gt;&#13;
+		&lt;/xsl:choose&gt;&#13;
+		&lt;/xsl:for-each&gt;&#13;
+		&lt;/td&gt;&#13;
+		&lt;/tr&gt;&#13;
+		&lt;/table&gt;&#13;
+		&#13;
+		&#13;
+		&lt;/xsl:template&gt;&#13;
+		&#13;
+		&lt;/xsl:stylesheet&gt;</xsl>
+</letter>

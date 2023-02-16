@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+  <code>checksum_calc.xsl</code>
+  <name>checksum_calc.xsl</name>
+  <description>Check sum Barcod xsl</description>
+  <customized>false</customized>
+  <updated_by />
+  <labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/checksum_calc.xsl">checksum_calc.xsl</labels>
+  <xsl>&lt;xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+    &lt;xsl:template match="/"&gt;
+    &lt;xsl:copy-of select="/" /&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;/xsl:stylesheet&gt;</xsl>
+</letter>

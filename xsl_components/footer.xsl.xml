@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>footer.xsl</code>
+	<name>footer.xsl</name>
+	<description>Footer Letter XSL</description>
+	<customized desc="Yes">true</customized>
+	<updated_by>AK103953</updated_by>
+	<update_date>2022-07-08Z</update_date>
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/footer.xsl">footer.xsl</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+		&lt;xsl:stylesheet version=&quot;1.0&quot;
+		xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+
+
+		&lt;xsl:template name=&quot;salutation&quot;&gt;
+
+		&lt;/xsl:template&gt;
+		&lt;xsl:template name=&quot;lastFooter&quot;&gt;
+		&lt;table&gt;
+		&lt;xsl:attribute name=&quot;style&quot;&gt;
+		&lt;xsl:call-template name=&quot;footerTableStyleCss&quot; /&gt; &lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;tr&gt;
+		&lt;xsl:for-each select=&quot;notification_data/organization_unit&quot;&gt;
+
+		&lt;xsl:attribute name=&quot;style&quot;&gt;
+		&lt;xsl:call-template name=&quot;listStyleCss&quot; /&gt; &lt;!-- style.xsl --&gt;
+		&lt;/xsl:attribute&gt;
+		&lt;td align=&quot;center&quot;&gt;
+		&lt;!--HW Wenn assigned_unit_name vorhanden ist soll dieser angezeigt werden und sonst der name--&gt;
+		&lt;!--HW assigned_unit_name auf calculated_destination_name geändert, da bei Fernleihe physical non-returnable nur dieses Feld befüllt ist.--&gt;
+		&lt;xsl:choose &gt;
+		&lt;xsl:when test=&quot;/notification_data/request/calculated_destination_name&quot;&gt;
+		&lt;xsl:value-of select=&quot;/notification_data/request/calculated_destination_name&quot;/&gt;
+		&lt;/xsl:when&gt;
+		&lt;xsl:otherwise&gt;&lt;xsl:value-of select=&quot;name&quot;/&gt;&lt;/xsl:otherwise&gt;
+		&lt;/xsl:choose&gt; &amp;#160;&lt;xsl:value-of select=&quot;line1&quot;/&gt;&amp;#160;&lt;xsl:value-of select=&quot;line2&quot;/&gt;&amp;#160;&lt;xsl:value-of
+		select=&quot;city&quot;/&gt;&amp;#160;&lt;xsl:value-of
+		select=&quot;postal_code&quot;/&gt;&amp;#160;&lt;xsl:value-of select=&quot;country&quot;/&gt;&lt;/td&gt;
+
+		&lt;/xsl:for-each&gt;
+		&lt;/tr&gt;
+		&lt;/table&gt;
+		&lt;/xsl:template&gt;
+		&lt;xsl:template name=&quot;contactUs&quot;&gt;
+		&lt;table align=&quot;left&quot;&gt;
+		&lt;tr&gt;
+		&lt;td align=&quot;left&quot;&gt;
+		&lt;a&gt;
+		&lt;xsl:attribute name=&quot;href&quot;&gt;
+		@@email_contact_us@@
+		&lt;/xsl:attribute&gt;
+		@@contact_us@@
+		&lt;/a&gt;
+		&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;/table&gt;
+		&lt;/xsl:template&gt;
+		&lt;xsl:template name=&quot;myAccount&quot;&gt;
+		&lt;table align=&quot;right&quot;&gt;
+		&lt;tr&gt;
+		&lt;td align=&quot;right&quot;&gt;
+		&lt;a&gt;
+		&lt;xsl:attribute name=&quot;href&quot;&gt;
+		@@email_my_account@@
+		&lt;/xsl:attribute&gt;
+		@@my_account@@
+		&lt;/a&gt;
+		&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;/table&gt;
+		&lt;/xsl:template&gt;
+
+
+		&lt;/xsl:stylesheet&gt;</xsl>
+</letter>
