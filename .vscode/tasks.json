@@ -50,7 +50,7 @@
 		{
 			"label": "set_env",
 			"type": "shell",
-			"command": "echo ${input:remember-labels-language};echo ${input:labels-language};echo ${input:xml-file};echo ${input:remember-xml-file}",
+			"command": "echo ${input:labels-language};echo ${input:remember-labels-language};echo ${input:xml-file};echo ${input:remember-xml-file}",
 			"problemMatcher": []
 		},
 		{
