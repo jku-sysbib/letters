@@ -3,5 +3,3 @@ xslt-out/*
 xsl/*
 xml/*
 node_modules/*
-package.json
-package-lock.json

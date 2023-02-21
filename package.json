@@ -1,0 +1,19 @@
+{
+  "name": "letters",
+  "version": "1.0.0",
+  "description": "* XSLT/XPath for Visual Studie Code (DeltaXML) * Command Variable (convinient Tasks) ## useful extensions * Live Preview * Thunder Client * Encode Decode * XML (RedHat) (better code formater for XML than DeltaXML; no additional newlines created)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://ak103953@stash.im.jku.at:7999/bib/letters.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "xslt3": "^2.5.0"
+  }
+}
