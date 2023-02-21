@@ -6,11 +6,11 @@
 * Thunder Client
 * Encode Decode
 * XML (RedHat) (better code formater for XML than DeltaXML; no additional newlines created)
+* Prettier
 
 # TODO on initialization
 * git clone
-* npm init -y
-* npm install --save-dev xslt3
+* npm install
 * create directory xml and download xml for letter here
 * Download your own letters to xsl_xml\
 under /diverses is an excel file for generating cURL commands for letter and labels
@@ -22,5 +22,4 @@ afterwards the generated links of the excel work also for windows.
 # usage
 * edit letter (xsl_xml/...)
 * `Task:Run setenv` set labels- and xml-file
-* `Task:Run render` generates all components and the html output\
-`Task:Run render2` if not encoded (works also with encoded)
+* `Task:Run render2` generate output html
