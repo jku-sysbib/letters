@@ -50,7 +50,7 @@
 		{
 			"label": "set_env",
 			"type": "shell",
-			"command": "echo ${input:labels-file};echo ${input:xml-file};echo ${input:remember-xml-file}",
+			"command": "echo ${input:remember-labels-language};echo ${input:labels-language};echo ${input:xml-file};echo ${input:remember-xml-file}",
 			"problemMatcher": []
 		},
 		{
@@ -110,7 +110,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/${fileBasenameNoExtension}.xsl",
@@ -139,7 +139,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/footer.xsl",
@@ -164,7 +164,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/checksum_calc.xsl",
@@ -189,7 +189,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/header.xsl",
@@ -213,7 +213,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/mailReason.xsl",
@@ -237,7 +237,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/recordTitle.xsl",
@@ -261,7 +261,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/senderReceiver.xsl",
@@ -285,7 +285,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/smsRecordTitle.xsl",
@@ -309,7 +309,7 @@
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${input:remember-labels-file}"
+					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/style.xsl",
@@ -364,7 +364,25 @@
       "args": { "key": "labels-file" }
     }
 		,
-    {
+		{
+			"id": "labels-language",
+			"type": "command",
+			"command": "extension.commandvariable.promptStringRemember",
+			"args": {
+				"key": "labels-language",
+				"description": "labels-language",
+				"default": "de"
+			}
+		},
+		{
+			"id": "remember-labels-language",
+			"type": "command",
+			"command": "extension.commandvariable.remember",
+			"args": {
+				"key": "labels-language"
+			}
+		},
+		{
       "id": "remember-xml-file",
       "type": "command",
       "command": "extension.commandvariable.remember",

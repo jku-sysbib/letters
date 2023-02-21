@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+  <code>header.xsl</code>
+  <name>header.xsl</name>
+  <description>header Letter XSL</description>
+  <customized>false</customized>
+  <updated_by>AK103953</updated_by>
+  <update_date>2022-03-03Z</update_date>
+  <labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/header.xsl">header.xsl</labels>
+  <xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;&#13;
+    &#13;
+    &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;&#13;
+    &#13;
+    &lt;!-- 2018-10-17: WA: addidtional tag after letter_name for certain letter types --&gt;&#13;
+    &lt;!-- 2018-02-02: WA: Bei Mahnbriefen Ueberschrift nicht h1, sondern nur bold (wegen Sichtfenster bei Briefen fuer Mahnstufe 3) --&gt;&#13;
+    &lt;!-- 2018-02-02: WA: Mehr Abstand rund um Adresse (Sichtfenster) --&gt;&#13;
+    &#13;
+    &lt;xsl:template name="head"&gt;&#13;
+    &lt;!--div style='visibility:hidden'&gt;&#13;
+    Letter_type:&#13;
+    &lt;xsl:value-of select="letter_type" /&gt;&#13;
+    &lt;/div--&gt;&#13;
+    &lt;xsl:comment&gt;Letter_type: &lt;xsl:value-of select="/notification_data/general_data/letter_type" /&gt;&lt;/xsl:comment&gt;&#13;
+    &lt;table cellspacing="0" cellpadding="5" border="0"&gt;&#13;
+    &lt;xsl:attribute name="style"&gt;&#13;
+    &lt;xsl:call-template name="headerTableStyleCss" /&gt; &lt;!-- style.xsl --&gt;&#13;
+    &lt;/xsl:attribute&gt;&#13;
+    &lt;!-- LOGO INSERT --&gt;&#13;
+    &lt;tr&gt;&#13;
+    &lt;xsl:attribute name="style"&gt;&#13;
+    &lt;xsl:call-template name="headerLogoStyleCss" /&gt; &lt;!-- style.xsl --&gt;&#13;
+    &lt;/xsl:attribute&gt;&#13;
+    &lt;td colspan="2"&gt;&#13;
+    &lt;div id="mailHeader"&gt;&#13;
+    &lt;div id="logoContainer" class="alignLeft"&gt;&#13;
+    &lt;img src="cid:logo.jpg" alt="Johannes Kepler University" /&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;/td&gt;&#13;
+    &lt;/tr&gt;&#13;
+    &lt;!-- END OF LOGO INSERT --&gt;&#13;
+    &lt;tr&gt;&#13;
+    &#13;
+    &lt;xsl:for-each select="notification_data/general_data"&gt;&#13;
+    &#13;
+    &lt;!-- for certain letter types: add tag --&gt;&#13;
+    &lt;xsl:variable name="letter_name_addtag"&gt;&#13;
+    &lt;xsl:choose&gt;&#13;
+    &lt;!-- letter type is FulReasourceRequestSlipLetter --&gt;&#13;
+    &lt;xsl:when test='letter_type="FulReasourceRequestSlipLetter"'&gt;&#13;
+    &lt;!-- notification_data/operator_user_name = System: Aushebezettel, else: Fernleihe or Bereitstellung --&gt;&#13;
+    &lt;xsl:choose&gt;&#13;
+    &lt;xsl:when test='/notification_data/operator_user_name="System"'&gt;&#13;
+    Aushebezettel&#13;
+    &lt;/xsl:when&gt;&#13;
+    &lt;xsl:otherwise&gt;&#13;
+    &lt;!-- if section with email-data: Fernleihbestellung, else: Aushebezettel --&gt;&#13;
+    &lt;xsl:choose&gt;&#13;
+    &lt;xsl:when test='/notification_data/organization_unit/email/create_date'&gt;&#13;
+    Fernleihbestellung&#13;
+    &lt;/xsl:when&gt;&#13;
+    &lt;xsl:otherwise&gt;&#13;
+    Bereitstellung&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+    &lt;/xsl:choose&gt;&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+    &lt;/xsl:choose&gt;&#13;
+    &lt;/xsl:when&gt;&#13;
+    &lt;!-- all other letter types: no additional tag --&gt;&#13;
+    &lt;xsl:otherwise&gt;&#13;
+    &lt;xsl:text /&gt;&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+    &lt;/xsl:choose&gt;&#13;
+    &lt;/xsl:variable&gt;&#13;
+    &#13;
+    &lt;td&gt;&#13;
+    &lt;xsl:choose&gt;&#13;
+    &lt;xsl:when test='letter_type="FulOverdueAndLostLoanNotificationLetter"'&gt;&#13;
+    &lt;b&gt;&#13;
+    &lt;xsl:value-of select="letter_name" /&gt;&#13;
+    &lt;xsl:if test="$letter_name_addtag != ''"&gt;&#13;
+    &amp;#160;-&amp;#160;&#13;
+    &lt;xsl:value-of select="normalize-space($letter_name_addtag)" /&gt;&#13;
+    &lt;/xsl:if&gt;&#13;
+    &lt;/b&gt;&#13;
+    &lt;/xsl:when&gt;&#13;
+    &lt;xsl:otherwise&gt;&#13;
+    &lt;h1&gt;&#13;
+    &lt;xsl:value-of select="letter_name" /&gt;&#13;
+    &lt;xsl:if test="$letter_name_addtag != ''"&gt;&#13;
+    &amp;#160;-&amp;#160;&#13;
+    &lt;xsl:value-of select="normalize-space($letter_name_addtag)" /&gt;&#13;
+    &lt;/xsl:if&gt;&#13;
+    &lt;/h1&gt;&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+    &lt;/xsl:choose&gt;&#13;
+    &lt;/td&gt;&#13;
+    &lt;td align="right"&gt;&#13;
+    &lt;xsl:value-of select="current_date" /&gt;&#13;
+    &lt;/td&gt;&#13;
+    &lt;/xsl:for-each&gt;&#13;
+    &#13;
+    &lt;/tr&gt;&#13;
+    &lt;/table&gt;&#13;
+    &#13;
+    &#13;
+    &lt;/xsl:template&gt;&#13;
+    &#13;
+    &lt;/xsl:stylesheet&gt;</xsl>
+</letter>

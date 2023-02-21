@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<letter>
+	<code>recordTitle.xsl</code>
+	<name>recordTitle.xsl</name>
+	<description>record Title xsl</description>
+	<customized desc="No">false</customized>
+	<updated_by />
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/recordTitle.xsl">recordTitle.xsl</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+		&lt;xsl:stylesheet version="1.0"
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+
+		&lt;xsl:template name="recordTitle"&gt;
+		&lt;div class="recordTitle"&gt;
+		&lt;span class="spacer_after_1em"&gt;&lt;xsl:value-of select="notification_data/phys_item_display/title"/&gt;&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;xsl:if test="notification_data/phys_item_display/author !=''"&gt;
+		&lt;div class=""&gt;
+		&lt;span class="spacer_after_1em"&gt;
+		&lt;span class="recordAuthor"&gt;@@by@@ &lt;xsl:value-of select="notification_data/phys_item_display/author"/&gt;&lt;/span&gt;
+		&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;/xsl:if&gt;
+		&lt;xsl:if test="notification_data/phys_item_display/issue_level_description !=''"&gt;
+		&lt;div class=""&gt;
+		&lt;span class="spacer_after_1em"&gt;
+		&lt;span class="volumeIssue"&gt;@@description@@ &lt;xsl:value-of select="notification_data/phys_item_display/issue_level_description"/&gt;&lt;/span&gt;
+		&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;/xsl:if&gt;
+
+		&lt;/xsl:template&gt;
+
+		&lt;/xsl:stylesheet&gt;</xsl>
+</letter>
