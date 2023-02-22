@@ -134,12 +134,12 @@
 			"type": "xslt-js",
 			"label": "conv_footer",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/footer.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/footer.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/footer.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/footer.xsl",
@@ -159,12 +159,12 @@
 			"type": "xslt-js",
 			"label": "conv_checksum_calc",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/checksum_calc.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/checksum_calc.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/checksum_calc.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/checksum_calc.xsl",
@@ -184,12 +184,12 @@
 			"type": "xslt-js",
 			"label": "conv_header",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/header.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/header.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/header.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/header.xsl",
@@ -208,12 +208,12 @@
 			"type": "xslt-js",
 			"label": "conv_mailReason",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/mailReason.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/mailReason.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/mailReason.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/mailReason.xsl",
@@ -232,12 +232,12 @@
 			"type": "xslt-js",
 			"label": "conv_recordTitle",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/recordTitle.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/recordTitle.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/recordTitle.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/recordTitle.xsl",
@@ -256,12 +256,12 @@
 			"type": "xslt-js",
 			"label": "conv_senderReceiver",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/senderReceiver.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/senderReceiver.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/senderReceiver.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/senderReceiver.xsl",
@@ -280,12 +280,12 @@
 			"type": "xslt-js",
 			"label": "conv_smsRecordTitle",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/smsRecordTitle.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/smsRecordTitle.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/smsRecordTitle.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/smsRecordTitle.xsl",
@@ -304,12 +304,12 @@
 			"type": "xslt-js",
 			"label": "conv_style",
 			"saxonJar": "${config:XSLT.tasks.saxonJar}",
-			"xsltFile": "conv_comp.xsl",
-			"xmlSource": "${workspaceFolder}/xsl_components/style.xsl",
+			"xsltFile": "conv_decoded.xsl",
+			"xmlSource": "${workspaceFolder}/xsl_components/style.xsl.xml",
 			"parameters": [
 				{
 					"name": "labels-file",
-					"value": "${workspaceFolder}/labels/${fileBasenameNoExtension}_${input:remember-labels-language}.xml"
+					"value": "${workspaceFolder}/labels/style.xsl_${input:remember-labels-language}.xml"
 				}
 			],
 			"resultPath": "${workspaceFolder}/xsl/style.xsl",
