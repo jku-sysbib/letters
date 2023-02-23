@@ -212,7 +212,7 @@
     </row>
     <row>
       <code>resource_sharing_request_id</code>
-      <description>Resource sharing internal request id</description>
+      <description>Interne Fernleihbestellung-ID</description>
       <enabled>true</enabled>
     </row>
     <row>
@@ -222,7 +222,8 @@
     </row>
     <row>
       <code>shelving_location_for_item</code>
-      <description>Regalstandort</description>
+      <description>
+        Regalstandort</description>
       <enabled>true</enabled>
     </row>
     <row>
@@ -237,7 +238,8 @@
     </row>
     <row>
       <code>subject</code>
-      <description>Aktive Fernleihe - Beleg</description>
+      <description>Aktive
+        Fernleihe - Beleg</description>
       <enabled>true</enabled>
     </row>
     <row>
@@ -252,7 +254,8 @@
     </row>
     <row>
       <code>year</code>
-      <description>Jahr</description>
+      <description>
+        Jahr</description>
       <enabled>true</enabled>
     </row>
   </rows>

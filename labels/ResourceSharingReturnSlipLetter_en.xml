@@ -91,6 +91,16 @@
       <enabled>true</enabled>
     </row>
     <row>
+      <code>pod_id</code>
+      <description>Pod ID</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
+      <code>pod_name</code>
+      <description>Pod Name</description>
+      <enabled>true</enabled>
+    </row>
+    <row>
       <code>request_id</code>
       <description>Request ID</description>
       <enabled>true</enabled>

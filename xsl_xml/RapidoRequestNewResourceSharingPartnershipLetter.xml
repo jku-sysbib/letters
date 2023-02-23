@@ -2,14 +2,15 @@
 <letter>
 	<code>RapidoRequestNewResourceSharingPartnershipLetter</code>
 	<enabled desc="Yes">true</enabled>
-	<name>title.Rapido_Request_New_Resource_Sharing_Partnership_Letter</name>
+	<name>Rapido member letter</name>
 	<description>Rapido Request New Resource Sharing Partnership Letter</description>
 	<channel>EMAIL</channel>
 	<retention_period></retention_period>
 	<customized desc="No">false</customized>
 	<patron_facing desc="Yes">true</patron_facing>
 	<updated_by />
-	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/RapidoRequestNewResourceSharingPartnershipLetter">RapidoRequestNewResourceSharingPartnershipLetter</labels>
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/RapidoRequestNewResourceSharingPartnershipLetter">
+		RapidoRequestNewResourceSharingPartnershipLetter</labels>
 	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 		&lt;xsl:stylesheet version="1.0"
 		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;

@@ -249,7 +249,7 @@
     </row>
     <row>
       <code>resource_sharing_request_id</code>
-      <description>Resource sharing internal request id</description>
+      <description>Interne Fernleihbestellung-ID</description>
       <enabled>true</enabled>
     </row>
     <row>
@@ -259,7 +259,8 @@
     </row>
     <row>
       <code>shelving_locations_for_holding</code>
-      <description>Die Ressource kann an einem der folgenden Standorte gefunden werden</description>
+      <description>Die
+        Ressource kann an einem der folgenden Standorte gefunden werden</description>
       <enabled>true</enabled>
     </row>
     <row>
@@ -269,7 +270,8 @@
     </row>
     <row>
       <code>supplied_to</code>
-      <description>Bereitgestellt für</description>
+      <description>Bereitgestellt
+        für</description>
       <enabled>true</enabled>
     </row>
     <row>

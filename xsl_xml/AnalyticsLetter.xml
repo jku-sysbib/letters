@@ -10,54 +10,61 @@
 	<patron_facing desc="No">false</patron_facing>
 	<updated_by>AK113081</updated_by>
 	<update_date>2021-11-04Z</update_date>
-	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/AnalyticsLetter">AnalyticsLetter</labels>
-	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt; 
-		&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-			&lt;xsl:include href=&quot;header.xsl&quot; /&gt;
-			&lt;xsl:include href=&quot;senderReceiver.xsl&quot; /&gt;
-			&lt;xsl:include href=&quot;mailReason.xsl&quot; /&gt;
-			&lt;xsl:include href=&quot;footer.xsl&quot; /&gt;
-			&lt;xsl:include href=&quot;style.xsl&quot; /&gt;
-			&lt;xsl:include href=&quot;recordTitle.xsl&quot; /&gt;
-			&lt;xsl:template match=&quot;/&quot;&gt;
-				&lt;html&gt;
-					&lt;head&gt;
-						&lt;xsl:call-template name=&quot;generalStyle&quot; /&gt;
-					&lt;/head&gt;
-					&lt;body&gt;
-						&lt;xsl:attribute name=&quot;style&quot;&gt;
-							&lt;xsl:call-template name=&quot;bodyStyleCss&quot; /&gt; &lt;!-- style.xsl --&gt;
-						&lt;/xsl:attribute&gt;
-						&lt;xsl:call-template name=&quot;head&quot; /&gt; &lt;!-- header.xsl --&gt;
-						&lt;xsl:call-template name=&quot;salutation&quot; /&gt; &lt;!-- footer.xsl --&gt;
-						&lt;xsl:call-template name=&quot;toWhomIsConcerned&quot; /&gt; &lt;!-- mailReason.xsl --&gt;
+	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/AnalyticsLetter">
+		AnalyticsLetter</labels>
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+	&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+	&lt;xsl:include href=&quot;header.xsl&quot; /&gt;
+	&lt;xsl:include href=&quot;senderReceiver.xsl&quot; /&gt;
+	&lt;xsl:include href=&quot;mailReason.xsl&quot; /&gt;
+	&lt;xsl:include href=&quot;footer.xsl&quot; /&gt;
+	&lt;xsl:include href=&quot;style.xsl&quot; /&gt;
+	&lt;xsl:include href=&quot;recordTitle.xsl&quot; /&gt;
+	&lt;xsl:template match=&quot;/&quot;&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	&lt;xsl:call-template name=&quot;generalStyle&quot; /&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;xsl:attribute name=&quot;style&quot;&gt;
+	&lt;xsl:call-template name=&quot;bodyStyleCss&quot; /&gt; &lt;!-- style.xsl --&gt;
+	&lt;/xsl:attribute&gt;
+	&lt;xsl:call-template name=&quot;head&quot; /&gt; &lt;!-- header.xsl --&gt;
+	&lt;xsl:call-template name=&quot;salutation&quot; /&gt; &lt;!-- footer.xsl --&gt;
+	&lt;xsl:call-template name=&quot;toWhomIsConcerned&quot; /&gt; &lt;!-- mailReason.xsl --&gt;
 
 
-						&lt;div class=&quot;messageArea&quot;&gt;
-							&lt;div class=&quot;messageBody&quot;&gt;
-								&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;5&quot; border=&quot;0&quot;&gt;
-									&lt;tr&gt;
-										&lt;td&gt;
-											&lt;xsl:choose&gt;
-												&lt;xsl:when test=&quot;/notification_data/report_deep_link != &apos;&apos;&quot;&gt; @@deepLinkLetterText@@ &lt;/xsl:when&gt;
-												&lt;xsl:otherwise&gt; @@letterText@@ &lt;/xsl:otherwise&gt;
-											&lt;/xsl:choose&gt; &amp;#160; &lt;b&gt;
-												&lt;xsl:value-of select=&quot;/notification_data/report_name&quot; /&gt;
-											&lt;/b&gt;
-		&lt;xsl:choose&gt;
-												&lt;xsl:when test=&quot;/notification_data/report_deep_link != &apos;&apos;&quot;&gt;
-													&lt;br /&gt;&lt;br /&gt; &lt;xsl:value-of select=&quot;/notification_data/report_deep_link&quot; /&gt;
-												&lt;/xsl:when&gt;
-											&lt;/xsl:choose&gt;
-										&lt;/td&gt;
-									&lt;/tr&gt;
-								&lt;/table&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-						&lt;xsl:call-template name=&quot;lastFooter&quot; /&gt; &lt;!-- footer.xsl --&gt;
-					&lt;/body&gt;
-				&lt;/html&gt;
-			&lt;/xsl:template&gt;
-		&lt;/xsl:stylesheet&gt;
-	</xsl>
+	&lt;div class=&quot;messageArea&quot;&gt;
+	&lt;div class=&quot;messageBody&quot;&gt;
+	&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;5&quot; border=&quot;0&quot;&gt;
+	&lt;tr&gt;
+	&lt;td&gt;
+	&lt;xsl:choose&gt;
+	&lt;xsl:when test=&quot;/notification_data/report_deep_link != &apos;&apos;&quot;&gt; @@deepLinkLetterText@@ &lt;/xsl:when&gt;
+	&lt;xsl:otherwise&gt; @@letterText@@ &lt;/xsl:otherwise&gt;
+	&lt;/xsl:choose&gt; &amp;#160; &lt;b&gt;
+	&lt;xsl:value-of select=&quot;/notification_data/report_name&quot; /&gt;
+	&lt;/b&gt;
+	&lt;xsl:choose&gt;
+	&lt;xsl:when test=&quot;/notification_data/report_deep_link != &apos;&apos;&quot;&gt;
+	&lt;br /&gt;&lt;br /&gt;
+	&lt;xsl:element name=&quot;a&quot;&gt;
+	&lt;xsl:attribute name=&quot;href&quot;&gt;
+	&lt;xsl:value-of select=&quot;/notification_data/report_deep_link&quot; /&gt;
+	&lt;/xsl:attribute&gt;
+	&lt;xsl:value-of select=&quot;/notification_data/report_deep_link&quot; /&gt;
+	&lt;/xsl:element&gt;
+	&lt;/xsl:when&gt;
+	&lt;/xsl:choose&gt;
+	&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;xsl:call-template name=&quot;lastFooter&quot; /&gt; &lt;!-- footer.xsl --&gt;
+	&lt;/body&gt;
+	&lt;/html&gt;
+	&lt;/xsl:template&gt;
+	&lt;/xsl:stylesheet&gt;
+	&lt;/xsl>
 </letter>
