@@ -9,582 +9,591 @@
 	<customized desc="Yes">true</customized>
 	<patron_facing desc="Yes">true</patron_facing>
 	<updated_by>exl_api</updated_by>
-	<update_date>2023-01-16Z</update_date>
+	<update_date>
+		2023-01-16Z</update_date>
 	<labels link="https://api-eu.hosted.exlibrisgroup.com/almaws/v1/conf/code-tables/FulOutgoingEmailLetter">FulOutgoingEmailLetter</labels>
-	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
-		&lt;xsl:include href=&quot;header.xsl&quot; /&gt;
-		&lt;xsl:include href=&quot;senderReceiver.xsl&quot; /&gt;
-		&lt;xsl:include href=&quot;mailReason.xsl&quot; /&gt;
-		&lt;xsl:include href=&quot;footer.xsl&quot; /&gt;
-		&lt;xsl:include href=&quot;style.xsl&quot; /&gt;
-		&lt;xsl:include href=&quot;recordTitle.xsl&quot; /&gt;
-		&lt;xsl:template match=&quot;/&quot;&gt;
-		&lt;html&gt;
-		&lt;xsl:if test=&quot;notification_data/languages/string&quot;&gt;
-		&lt;xsl:attribute name=&quot;lang&quot;&gt;
-		&lt;xsl:value-of select=&quot;notification_data/languages/string&quot; /&gt;
-		&lt;/xsl:attribute&gt;
-		&lt;/xsl:if&gt;
+	<xsl>&lt;?xml version="1.0" encoding="utf-8"?&gt; <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+			<xsl:include href="header.xsl" />
+			<xsl:include href="senderReceiver.xsl" />
+			<xsl:include href="mailReason.xsl" />
+			<xsl:include href="footer.xsl" />
+			<xsl:include href="style.xsl" />
+			<xsl:include href="recordTitle.xsl" />
+			<xsl:template match="/">
+				<html>
+					<xsl:if test="notification_data/languages/string">
+						<xsl:attribute name="lang">
+							<xsl:value-of select="notification_data/languages/string" />
+						</xsl:attribute>
+					</xsl:if>
 
-		&lt;head&gt;
-		&lt;title&gt;
-		&lt;xsl:value-of select=&quot;notification_data/general_data/subject&quot; /&gt;
-		&lt;/title&gt;
+					<head>
+						<title>
+							<xsl:value-of select="notification_data/general_data/subject" />
+						</title>
 
-		&lt;xsl:call-template name=&quot;generalStyle&quot; /&gt;
-		&lt;/head&gt;
-		&lt;body&gt;
-		&lt;xsl:attribute name=&quot;style&quot;&gt;
-		&lt;xsl:call-template name=&quot;bodyStyleCss&quot; /&gt;
-		&lt;!-- style.xsl --&gt;
-		&lt;/xsl:attribute&gt;
-		&lt;xsl:call-template name=&quot;head&quot; /&gt;
-		&lt;!-- header.xsl --&gt;
-		&lt;!-- HW: nicht anzeigen da immer per eMail verschickt. xsl:call-template name=&quot;senderReceiver&quot; /--&gt; &lt;!-- SenderReceiver.xsl --&gt;
+						<xsl:call-template name="generalStyle" />
+					</head>
+					<body>
+						<xsl:attribute name="style">
+							<xsl:call-template name="bodyStyleCss" />
+							<!-- style.xsl -->
+						</xsl:attribute>
+						<xsl:call-template name="head" />
+						<!-- header.xsl -->
+						<!-- HW: nicht anzeigen da immer per eMail verschickt. xsl:call-template name="senderReceiver" /--> <!-- SenderReceiver.xsl -->
 
-		&lt;table role=&apos;presentation&apos; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot; border=&quot;0&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
+						<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+							<tr>
+								<td>
 
-		&lt;h3&gt;@@header@@&lt;/h3&gt;
+									<h3>@@header@@</h3>
 
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/table&gt;
+								</td>
+							</tr>
+						</table>
 
-		&lt;div class=&quot;messageArea&quot;&gt;
-		&lt;div class=&quot;messageBody&quot;&gt;
-		&lt;table role=&apos;presentation&apos; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot; border=&quot;0&quot;&gt;
-		&lt;xsl:choose&gt;
-		&lt;xsl:when test=&quot;notification_data/request/needed_by !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;@@requested_by@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/needed_by&quot; /&gt;
-		&lt;/td&gt;
+						<div class="messageArea">
+							<div class="messageBody">
+								<table role='presentation' cellspacing="0" cellpadding="5" border="0">
+									<xsl:choose>
+										<xsl:when test="notification_data/request/needed_by !=''">
+											<tr>
+												<td>
+													<strong>@@requested_by@@: </strong>
+													<xsl:value-of select="notification_data/request/needed_by" />
+												</td>
 
-		&lt;/tr&gt;
-		&lt;/xsl:when&gt;
-		&lt;xsl:otherwise&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;@@requested@@: &lt;/strong&gt;
+											</tr>
+										</xsl:when>
+										<xsl:otherwise>
+											<tr>
+												<td>
+													<strong>@@requested@@: </strong>
 
-		&lt;/td&gt;
+												</td>
 
-		&lt;/tr&gt;
-		&lt;/xsl:otherwise&gt;
-		&lt;/xsl:choose&gt;
-		&lt;/table&gt;
-		&lt;table role=&apos;presentation&apos; cellspacing=&quot;0&quot; cellpadding=&quot;5&quot; border=&quot;0&quot;&gt;
+											</tr>
+										</xsl:otherwise>
+									</xsl:choose>
+								</table>
+								<table role='presentation' cellspacing="0" cellpadding="5" border="0">
 
-		&lt;xsl:attribute name=&quot;style&quot;&gt;
-		&lt;xsl:call-template name=&quot;listStyleCss&quot; /&gt;
-		&lt;!-- style.xsl --&gt;
-		&lt;/xsl:attribute&gt;
+									<xsl:attribute name="style">
+										<xsl:call-template name="listStyleCss" />
+										<!-- style.xsl -->
+									</xsl:attribute>
 
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@format@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/material_type&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/title !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@title@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/title&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/chapter !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@chapter@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/chapter&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/autho_initials !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@author@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/author&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;hr /&gt;
+									<tr>
+										<td>
+											<strong> @@format@@: </strong>
+											<xsl:value-of select="notification_data/request/display/material_type" />
+											<!-- recordTitle.xsl -->
+										</td>
+									</tr>
+									<xsl:if test="notification_data/request/display/title !=''">
+										<tr>
+											<td>
+												<strong> @@title@@: </strong>
+												<xsl:value-of select="notification_data/request/display/title" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/request/display/chapter !=''">
+										<tr>
+											<td>
+												<strong> @@chapter@@: </strong>
+												<xsl:value-of select="notification_data/request/display/chapter" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/request/display/autho_initials !=''">
+										<tr>
+											<td>
+												<strong> @@author@@: </strong>
+												<xsl:value-of select="notification_data/request/display/author" />
+											</td>
+										</tr>
+									</xsl:if>
+									<tr>
+										<td>
+											<hr />
 
-		&lt;xsl:call-template name=&quot;author_initials&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot;&gt;false&lt;/xsl:with-param&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;hr /&gt;
+											<xsl:call-template name="author_initials">
+												<xsl:with-param name="beistrich">false</xsl:with-param>
+											</xsl:call-template>
+											<hr />
 
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/call_number !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@call_number@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/call_number&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/source !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@source@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/source&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/doi !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;
-		@@doi@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/doi&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;!--HW PMID soll nicht angezeigt werden. Wofür ist das überhaupt&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/pmid !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@pmid@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/pmid&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if--&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/note !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;
-		@@note@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/note&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/note !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@request_note@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/note&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
+											<!-- recordTitle.xsl -->
+										</td>
+									</tr>
+									<xsl:if test="notification_data/request/display/call_number !=''">
+										<tr>
+											<td>
+												<strong> @@call_number@@: </strong>
+												<xsl:value-of select="notification_data/request/display/call_number" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/request/display/source !=''">
+										<tr>
+											<td>
+												<strong> @@source@@: </strong>
+												<xsl:value-of select="notification_data/request/display/source" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/request/display/doi !=''">
+										<tr>
+											<td>
+												<strong>
+													@@doi@@: </strong>
+												<xsl:value-of select="notification_data/request/display/doi" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<!--HW
+									PMID soll nicht angezeigt werden. Wofür ist das überhaupt>
+		<xsl:if test="notification_data/request/display/pmid !=''">
+		<tr>
+		<td>
+		<strong> @@pmid@@: </strong>
+		<xsl:value-of select="notification_data/request/display/pmid" />
+		</td>
+		</tr>
+		</xsl:if-->
+									<xsl:if test="notification_data/request/display/note !=''">
+										<tr>
+											<td>
+												<strong>
+													@@note@@: </strong>
+												<xsl:value-of select="notification_data/request/display/note" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/request/note !=''">
+										<tr>
+											<td>
+												<strong> @@request_note@@: </strong>
+												<xsl:value-of select="notification_data/request/note" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
 
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;
-		@@date@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/general_data/current_date&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;xsl:if test=&quot;notification_data/request/external_request_id !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt; @@request_id@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/external_request_id&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;
-		@@request_format@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/format_display&quot; /&gt;
-		&lt;!-- recordTitle.xsl --&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
+									<tr>
+										<td>
+											<strong>
+												@@date@@: </strong>
+											<xsl:value-of select="notification_data/general_data/current_date" />
+											<!-- recordTitle.xsl -->
+										</td>
+									</tr>
+									<xsl:if test="notification_data/request/external_request_id !=''">
+										<tr>
+											<td>
+												<strong> @@request_id@@: </strong>
+												<xsl:value-of select="notification_data/request/external_request_id" />
+												<!-- recordTitle.xsl -->
+											</td>
+										</tr>
+									</xsl:if>
+									<tr>
+										<td>
+											<strong>
+												@@request_format@@: </strong>
+											<xsl:value-of select="notification_data/request/format_display" />
+											<!-- recordTitle.xsl -->
+										</td>
+									</tr>
 
-		&lt;xsl:choose&gt;
-		&lt;xsl:when test=&quot;notification_data/request/max_fee !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;@@maximum_fee@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/max_fee&quot; /&gt;
-		&lt;/td&gt;
+									<xsl:choose>
+										<xsl:when test="notification_data/request/max_fee !=''">
+											<tr>
+												<td>
+													<strong>@@maximum_fee@@: </strong>
+													<xsl:value-of select="notification_data/request/max_fee" />
+												</td>
 
-		&lt;/tr&gt;
-		&lt;/xsl:when&gt;
-		&lt;/xsl:choose&gt;
+											</tr>
+										</xsl:when>
+									</xsl:choose>
 
-		&lt;xsl:choose&gt;
-		&lt;xsl:when test=&quot;notification_data/level_of_service !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;strong&gt;
-		@@level_of_service@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/level_of_service&quot; /&gt;
-		&lt;/td&gt;
+									<xsl:choose>
+										<xsl:when test="notification_data/level_of_service !=''">
+											<tr>
+												<td>
+													<strong>
+														@@level_of_service@@: </strong>
+													<xsl:value-of select="notification_data/level_of_service" />
+												</td>
 
-		&lt;/tr&gt;
-		&lt;/xsl:when&gt;
-		&lt;/xsl:choose&gt;
+											</tr>
+										</xsl:when>
+									</xsl:choose>
 
 
-		&lt;/table&gt;
-		&lt;br /&gt;
-		&lt;table role=&apos;presentation&apos;&gt;
+								</table>
+								<br />
+								<table role='presentation'>
 
-		&lt;tr&gt;
-		&lt;td&gt;
-		@@signature@@&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/name&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/line1 !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/line1&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/line2 !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/line2&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/line3 !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/line3&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/line4 !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/line4&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/line5 !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/line5&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/city !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/city&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/library/address/country !=&apos;&apos;&quot;&gt;
-		&lt;tr&gt;
-		&lt;td&gt;
-		&lt;xsl:value-of select=&quot;notification_data/library/address/country&quot; /&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
+									<tr>
+										<td>
+											@@signature@@</td>
+									</tr>
+									<tr>
+										<td>
+											<xsl:value-of select="notification_data/library/name" />
+										</td>
+									</tr>
+									<xsl:if test="notification_data/library/address/line1 !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/line1" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/line2 !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/line2" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/line3 !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/line3" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/line4 !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/line4" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/line5 !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/line5" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/city !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/city" />
+											</td>
+										</tr>
+									</xsl:if>
+									<xsl:if test="notification_data/library/address/country !=''">
+										<tr>
+											<td>
+												<xsl:value-of select="notification_data/library/address/country" />
+											</td>
+										</tr>
 
-		&lt;/xsl:if&gt;
-		&lt;/table&gt;
-		&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;xsl:call-template name=&quot;lastFooter&quot; /&gt;
-		&lt;!-- footer.xsl --&gt;
-		&lt;/body&gt;
-		&lt;/html&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;author_initials&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; select=&quot;&apos;false&apos;&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/autho_initials != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@author_initials@@: &lt;/strong&gt;
+									</xsl:if>
+								</table>
+							</div>
+						</div>
+						<xsl:call-template name="lastFooter" />
+						<!-- footer.xsl -->
+					</body>
+				</html>
+			</xsl:template>
+			<xsl:template name="author_initials">
+				<xsl:param name="beistrich" select="'false'" />
+		<xsl:if test="notification_data/request/display/autho_initials != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@author_initials@@: </strong>
 
-		&lt;xsl:value-of select=&quot;notification_data/request/display/autho_initials&quot; /&gt;
-		&lt;xsl:call-template
-		name=&quot;journal_title&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/autho_initials = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;journal_title&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+		<xsl:value-of select="notification_data/request/display/autho_initials" />
+		<xsl:call-template
+						name="journal_title">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/autho_initials = ''">
+					<xsl:call-template name="journal_title">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;journal_title&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; select=&quot;&apos;false&apos;&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/journal_title != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@journal_title@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/journal_title&quot; /&gt;
-		&lt;xsl:call-template
-		name=&quot;publication_date&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/journal_title = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;publication_date&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="journal_title">
+				<xsl:param name="beistrich" select="'false'" />
+		<xsl:if test="notification_data/request/display/journal_title != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@journal_title@@: </strong>
+		<xsl:value-of select="notification_data/request/display/journal_title" />
+		<xsl:call-template
+						name="publication_date">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/journal_title = ''">
+					<xsl:call-template name="publication_date">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;publication_date&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/publication_date != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@publication_date@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/publication_date&quot; /&gt;
-		&lt;xsl:call-template name=&quot;year&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/publication_date = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;year&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;year&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/year != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@year@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/year&quot; /&gt;
-		&lt;xsl:call-template name=&quot;volume&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/publication_date = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;volume&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="publication_date">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/publication_date != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@publication_date@@: </strong>
+		<xsl:value-of select="notification_data/request/display/publication_date" />
+		<xsl:call-template name="year">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/publication_date = ''">
+					<xsl:call-template name="year">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="year">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/year != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@year@@: </strong>
+		<xsl:value-of select="notification_data/request/display/year" />
+		<xsl:call-template name="volume">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/year = ''">
+					<xsl:call-template name="volume">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;volume&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/volume != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@volume@@: &lt;/strong&gt;
+			<xsl:template name="volume">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/volume != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@volume@@: </strong>
 
-		&lt;xsl:value-of select=&quot;notification_data/request/display/volume&quot; /&gt;
-		&lt;xsl:call-template name=&quot;edition&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/volume = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;edition&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;edition&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/edition != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@edition@@: &lt;/strong&gt;
+		<xsl:value-of select="notification_data/request/display/volume" />
+		<xsl:call-template name="edition">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/volume = ''">
+					<xsl:call-template name="edition">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="edition">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/edition != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>
+						@@edition@@: </strong>
 
-		&lt;xsl:value-of select=&quot;notification_data/request/display/edition&quot; /&gt;
-		&lt;xsl:call-template name=&quot;issue&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/edition = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;issue&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+		<xsl:value-of select="notification_data/request/display/edition" />
+		<xsl:call-template name="issue">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/edition = ''">
+					<xsl:call-template name="issue">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;issue&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/issue != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@issue@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/issue&quot; /&gt;
-		&lt;xsl:call-template name=&quot;start_page&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/issue = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;start_page&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="issue">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/issue != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@issue@@: </strong>
+		<xsl:value-of select="notification_data/request/display/issue" />
+		<xsl:call-template name="start_page">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/issue = ''">
+					<xsl:call-template name="start_page">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;start_page&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if
-		test=&quot;notification_data/request/display/start_page != &apos;&apos; or notification_data/request/display/end_page != &apos;&apos; or notification_data/request/display/pages
-		!=&apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@pages@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/start_page&quot; /&gt;
-		&lt;xsl:text&gt; - &lt;/xsl:text&gt;
-		&lt;xsl:value-of
-		select=&quot;notification_data/request/display/end_page&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/pages !=&apos;&apos;&quot;&gt;
-		&lt;xsl:text&gt;(&lt;/xsl:text&gt;&lt;xsl:value-of select=&quot;notification_data/request/display/pages&quot; /&gt;&lt;xsl:text&gt;)&lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:call-template name=&quot;isbn&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if
-		test=&quot;not(notification_data/request/display/start_page != &apos;&apos; or notification_data/request/display/end_page != &apos;&apos; or notification_data/request/display/pages
-		!=&apos;&apos;)&quot;&gt;
-		&lt;xsl:call-template name=&quot;isbn&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="start_page">
+				<xsl:param name="beistrich" />
+		<xsl:if
+					test="notification_data/request/display/start_page != '' or notification_data/request/display/end_page != '' or notification_data/request/display/pages
+		!=''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>
+						@@pages@@: </strong>
+		<xsl:value-of select="notification_data/request/display/start_page" />
+		<xsl:text> - </xsl:text>
+		<xsl:value-of select="notification_data/request/display/end_page" />
+		<xsl:if
+						test="notification_data/request/display/pages !=''">
+						<xsl:text>(</xsl:text><xsl:value-of select="notification_data/request/display/pages" /><xsl:text>)</xsl:text>
+					</xsl:if>
+		<xsl:call-template name="isbn">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if
+					test="not(notification_data/request/display/start_page != '' or notification_data/request/display/end_page != '' or notification_data/request/display/pages
+		!='')">
+					<xsl:call-template name="isbn">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;isbn&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/isbn != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@isbn@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/isbn&quot; /&gt;
-		&lt;xsl:call-template name=&quot;issn&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/isbn = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;issn&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="isbn">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/isbn != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>
+						@@isbn@@: </strong>
+		<xsl:value-of select="notification_data/request/display/isbn" />
+		<xsl:call-template name="issn">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/isbn = ''">
+					<xsl:call-template name="issn">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
 
-		&lt;xsl:template name=&quot;issn&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/issn != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@issn@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/issn&quot; /&gt;
-		&lt;xsl:call-template name=&quot;publisher&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/issn = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;publisher&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;publisher&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/publisher != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@publisher@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/publisher&quot; /&gt;
-		&lt;xsl:call-template name=&quot;place_of_publication&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/issue = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;place_of_publication&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;place_of_publication&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/place_of_publication != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@place_of_publication@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/place_of_publication&quot; /&gt;
-		&lt;xsl:call-template
-		name=&quot;volume_bk&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/place_of_publication = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;volume_bk&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;volume_bk&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/volume_bk != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@volume@@_bk: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/volume_bk&quot; /&gt;
-		&lt;xsl:call-template name=&quot;part&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/volume_bk = &apos;&apos;&quot;&gt;
-		&lt;xsl:call-template name=&quot;part&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
-		&lt;xsl:template name=&quot;part&quot;&gt;
-		&lt;xsl:param name=&quot;beistrich&quot; /&gt;
-		&lt;xsl:if test=&quot;notification_data/request/display/part != &apos;&apos;&quot;&gt;
-		&lt;xsl:if test=&quot;$beistrich = &apos;true&apos; &quot;&gt;
-		&lt;xsl:text&gt;, &lt;/xsl:text&gt;
-		&lt;/xsl:if&gt;
-		&lt;strong&gt;@@part@@: &lt;/strong&gt;
-		&lt;xsl:value-of select=&quot;notification_data/request/display/part&quot; /&gt;
-		&lt;!--xsl:call-template name=&quot;start_page&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;&apos;true&apos;&quot;/&gt;
-		&lt;/xsl:call-template--&gt;
-		&lt;/xsl:if&gt;
-		&lt;xsl:if
-		test=&quot;notification_data/request/display/part = &apos;&apos;&quot;&gt;
-		&lt;!--xsl:call-template name=&quot;start_page&quot;&gt;
-		&lt;xsl:with-param name=&quot;beistrich&quot; select=&quot;$beistrich&quot; /&gt;
-		&lt;/xsl:call-template--&gt;
-		&lt;/xsl:if&gt;
-		&lt;/xsl:template&gt;
+			<xsl:template name="issn">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/issn != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@issn@@: </strong>
+		<xsl:value-of select="notification_data/request/display/issn" />
+		<xsl:call-template name="publisher">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/issn = ''">
+					<xsl:call-template name="publisher">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="publisher">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/publisher != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>
+						@@publisher@@: </strong>
+		<xsl:value-of select="notification_data/request/display/publisher" />
+		<xsl:call-template name="place_of_publication">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/publisher = ''">
+					<xsl:call-template name="place_of_publication">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="place_of_publication">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/place_of_publication != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@place_of_publication@@: </strong>
+		<xsl:value-of select="notification_data/request/display/place_of_publication" />
+		<xsl:call-template
+						name="volume_bk">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/place_of_publication = ''">
+					<xsl:call-template name="volume_bk">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="volume_bk">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/volume_bk != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>
+						@@volume@@_bk: </strong>
+		<xsl:value-of select="notification_data/request/display/volume_bk" />
+		<xsl:call-template name="part">
+						<xsl:with-param name="beistrich" select="'true'" />
+					</xsl:call-template>
+				</xsl:if>
+		<xsl:if test="notification_data/request/display/volume_bk = ''">
+					<xsl:call-template name="part">
+						<xsl:with-param name="beistrich" select="$beistrich" />
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:template>
+			<xsl:template name="part">
+				<xsl:param name="beistrich" />
+		<xsl:if test="notification_data/request/display/part != ''">
+					<xsl:if test="$beistrich = 'true' ">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+		<strong>@@part@@: </strong>
+		<xsl:value-of select="notification_data/request/display/part" />
+					<!--xsl:call-template
+					name="start_page">
+		<xsl:with-param name="beistrich" select="'true'"/>
+		</xsl:call-template-->
+				</xsl:if>
+		<xsl:if
+					test="notification_data/request/display/part = ''">
+					<!--xsl:call-template
+					name="start_page">
+		<xsl:with-param name="beistrich" select="$beistrich" />
+		</xsl:call-template-->
+				</xsl:if>
+			</xsl:template>
 
-		&lt;/xsl:stylesheet&gt;
+		</xsl:stylesheet>
 	</xsl>
 </letter>
